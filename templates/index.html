@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wardrobe Lookbook</title>
+<link rel="stylesheet" href="/static/fonts/fonts.css">
+<style>
+  /* Layout: full-viewport masthead over a fixed 1fr/2fr split — controls left,
+     a single image plate right; page never scrolls.
+     Type: Bodoni Moda (masthead, folio, plate no.) + Archivo (controls, data).
+     Palette: gallery warm-grey paper, warm ink, greige mat, oxblood accent. */
+  :root {
+    --paper: #F4F3EF;
+    --ink: #1C1A17;
+    --mat: #E7E4DC;
+    --line: #D4D0C6;
+    --muted: #726D63;
+    --accent: #6E2433;
+    --accent-soft: rgba(110,36,51,.10);
+    --c-locked: #3F7D5A;
+    --c-potential: #937327;
+    --c-doubtful: #A4505B;
+    --shadow: 0 2px 26px rgba(28,26,23,.16);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #191816; --ink: #ECE8E0; --mat: #221F1C; --line: #35312B;
+      --muted: #9C968A; --accent: #CB7F89; --accent-soft: rgba(203,127,137,.16);
+      --c-locked: #6FB890; --c-potential: #D6B45E; --c-doubtful: #D98791;
+      --shadow: 0 2px 30px rgba(0,0,0,.45);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #191816; --ink: #ECE8E0; --mat: #221F1C; --line: #35312B;
+    --muted: #9C968A; --accent: #CB7F89; --accent-soft: rgba(203,127,137,.16);
+    --c-locked: #6FB890; --c-potential: #D6B45E; --c-doubtful: #D98791;
+    --shadow: 0 2px 30px rgba(0,0,0,.45);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "Archivo", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; }
+  .app { height: 100%; display: flex; flex-direction: column; }
+
+  /* ---- masthead ---- */
+  .masthead {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+    padding-block: 13px;
+    padding-left: max(24px, env(safe-area-inset-left, 0px));
+    padding-right: max(24px, env(safe-area-inset-right, 0px));
+    border-bottom: 1px solid var(--line); flex: none;
+  }
+  .mast-left { display: flex; align-items: baseline; gap: 12px; min-width: 0; }
+  .wordmark {
+    font-family: "Bodoni Moda", Georgia, serif; font-weight: 500; font-size: 29px;
+    line-height: 1; margin: 0; letter-spacing: .01em;
+  }
+  .tagline { font-family: "Bodoni Moda", Georgia, serif; font-style: italic; font-size: 14px; color: var(--muted); }
+  .mast-right { display: flex; align-items: center; gap: 14px; flex: none; }
+  .folio {
+    font-family: "Bodoni Moda", Georgia, serif; font-size: 15px; color: var(--muted);
+    letter-spacing: .06em; font-variant-numeric: tabular-nums;
+  }
+  .theme {
+    width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--line);
+    background: transparent; color: var(--ink); cursor: pointer; font-size: 14px; line-height: 1;
+  }
+  .theme:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ---- split ---- */
+  .split { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(360px, 1.1fr) 1.9fr; }
+
+  /* ---- controls panel ---- */
+  .panel { min-height: 0; display: flex; flex-direction: column; border-right: 1px solid var(--line); }
+  .panel-scroll {
+    flex: 1; min-height: 0; overflow: auto;
+    padding-block: 20px;
+    padding-left: max(24px, env(safe-area-inset-left, 0px));
+    padding-right: 24px;
+  }
+  .search input {
+    width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line);
+    color: var(--ink); font: inherit; font-size: 14px; padding: 10px 0; margin-bottom: 18px;
+  }
+  .search input::placeholder { color: var(--muted); }
+  .search input:focus { outline: none; border-bottom-color: var(--accent); }
+
+  .cats { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 6px; }
+  .cats button {
+    border: 1px solid var(--line); background: transparent; color: var(--muted);
+    padding: 6px 15px; border-radius: 999px; font: inherit; font-size: 13px; cursor: pointer;
+    transition: color .12s, border-color .12s;
+  }
+  .cats button:hover { border-color: var(--accent); color: var(--accent); }
+  .cats button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  .grp {
+    font-family: "Bodoni Moda", Georgia, serif; font-style: italic; font-size: 19px;
+    color: var(--ink); margin: 22px 0 2px;
+  }
+  .row {
+    display: grid; grid-template-columns: 18px 80px 1fr auto; align-items: center;
+    gap: 12px; padding-block: 12px; border-bottom: 1px solid var(--line);
+  }
+  .dot { width: 18px; height: 18px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(128,128,128,.35); }
+  .row label { font-size: 14px; color: var(--ink); }
+  .sel { position: relative; min-width: 0; }
+  .sel::after {
+    content: "▾"; position: absolute; right: 2px; top: 50%; transform: translateY(-50%);
+    font-size: 10px; color: var(--muted); pointer-events: none;
+  }
+  .sel select {
+    width: 100%; appearance: none; -webkit-appearance: none; background: transparent;
+    border: none; color: var(--ink); font: inherit; font-size: 14px; font-weight: 500;
+    padding: 2px 16px 2px 0; cursor: pointer; border-radius: 3px;
+  }
+  .sel select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .hex {
+    font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums;
+    text-align: right; white-space: nowrap;
+  }
+
+  /* ---- stepper ---- */
+  .stepper {
+    flex: none; border-top: 1px solid var(--line); display: flex; align-items: center;
+    justify-content: space-between; gap: 10px;
+    padding-block: 12px;
+    padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: 24px;
+  }
+  .stepper button {
+    background: transparent; border: 1px solid var(--line); color: var(--ink);
+    padding: 8px 17px; border-radius: 999px; font: inherit; font-size: 13px; cursor: pointer;
+    transition: color .12s, border-color .12s;
+  }
+  .stepper button:hover { border-color: var(--accent); color: var(--accent); }
+  .count {
+    font-family: "Bodoni Moda", Georgia, serif; font-size: 19px; letter-spacing: .04em;
+    font-variant-numeric: tabular-nums; color: var(--ink);
+  }
+
+  /* ---- image plate ---- */
+  .plate {
+    min-height: 0; position: relative; display: flex; flex-direction: column;
+    /* pool of the outfit's backdrop tone, strong near the figure, easing to the mat at the corners */
+    background:
+      radial-gradient(140% 115% at 50% 40%,
+        color-mix(in srgb, var(--amb, var(--mat)) 92%, var(--mat)) 0%,
+        color-mix(in srgb, var(--amb, var(--mat)) 68%, var(--mat)) 50%,
+        color-mix(in srgb, var(--amb, var(--mat)) 28%, var(--mat)) 88%,
+        var(--mat) 100%);
+    transition: background .45s ease;
+  }
+  .stage {
+    flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center;
+    padding: 20px; position: relative;
+  }
+  /* fixed 2:3 frame; image contained (never cropped), edges just lightly softened — not a glow */
+  .stage img {
+    height: 100%; aspect-ratio: 2 / 3; max-width: 100%; object-fit: contain; display: block;
+    --feather: 0.5%;
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0, #000 var(--feather), #000 calc(100% - var(--feather)), transparent 100%),
+      linear-gradient(to bottom, transparent 0, #000 var(--feather), #000 calc(100% - var(--feather)), transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to right, transparent 0, #000 var(--feather), #000 calc(100% - var(--feather)), transparent 100%),
+      linear-gradient(to bottom, transparent 0, #000 var(--feather), #000 calc(100% - var(--feather)), transparent 100%);
+    mask-composite: intersect;
+    transition: opacity .22s ease;
+  }
+  .empty {
+    position: absolute; inset: 0; display: none; align-items: center; justify-content: center;
+    color: var(--muted); font-style: italic; font-family: "Bodoni Moda", Georgia, serif; font-size: 18px;
+  }
+  .plate.is-empty .empty { display: flex; }
+  .plate.is-empty img { visibility: hidden; }
+
+  .caption {
+    flex: none; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+    border-top: 1px solid var(--line); background: var(--paper);
+    padding-block: 14px;
+    padding-left: 26px; padding-right: max(26px, env(safe-area-inset-right, 0px));
+  }
+  .plate-no {
+    font-family: "Bodoni Moda", Georgia, serif; font-size: 23px; color: var(--accent);
+    font-variant-numeric: tabular-nums; line-height: 1;
+  }
+  .cat-pill { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; color: var(--muted); }
+  .cat-pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
+  .cat-pill.is-Locked::before { background: var(--c-locked); }
+  .cat-pill.is-Potential::before { background: var(--c-potential); }
+  .cat-pill.is-Doubtful::before { background: var(--c-doubtful); }
+  .descr { color: var(--muted); font-size: 13px; }
+
+  /* image-fit toggle: Fit (framed on pool) vs Fill (full-bleed magazine) */
+  .viewtoggle {
+    position: absolute; top: 14px; z-index: 3; display: flex; gap: 3px; padding: 3px;
+    right: max(14px, env(safe-area-inset-right, 0px)); border-radius: 999px;
+    background: color-mix(in srgb, var(--paper) 70%, transparent);
+    border: 1px solid var(--line); backdrop-filter: blur(6px);
+  }
+  .viewtoggle button {
+    border: none; background: transparent; color: var(--muted);
+    font: inherit; font-size: 11px; padding: 4px 11px; border-radius: 999px; cursor: pointer;
+  }
+  .viewtoggle button.active { background: var(--accent); color: #fff; }
+
+  /* Fill / full-bleed mode */
+  .plate[data-mode="full"] { background: var(--mat); }
+  .plate[data-mode="full"] .stage { position: absolute; inset: 0; padding: 0; }
+  .plate[data-mode="full"] .stage img {
+    width: 100%; height: 100%; max-width: none; aspect-ratio: auto;
+    object-fit: cover; object-position: center 40%;
+    -webkit-mask-image: none; mask-image: none;
+  }
+  .plate[data-mode="full"] .caption {
+    position: absolute; left: 0; right: 0; bottom: 0; border-top: none; color: #fff;
+    background: linear-gradient(to top, rgba(0,0,0,.66), rgba(0,0,0,0));
+    padding-block: 52px 16px;
+  }
+  .plate[data-mode="full"] .plate-no { color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,.4); }
+  .plate[data-mode="full"] .cat-pill { color: rgba(255,255,255,.88); }
+  .plate[data-mode="full"] .descr { color: rgba(255,255,255,.82); text-shadow: 0 1px 6px rgba(0,0,0,.4); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stage img, .cats button, .stepper button, .theme, .plate { transition: none; }
+  }
+
+  /* ---- narrow ---- */
+  @media (max-width: 760px) {
+    .app { height: auto; min-height: 100%; }
+    .split { grid-template-columns: 1fr; }
+    .panel { border-right: none; border-bottom: 1px solid var(--line); }
+    .panel-scroll { overflow: visible; }
+    .plate { min-height: 68vh; }
+    .wordmark { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="masthead">
+    <div class="mast-left">
+      <h1 class="wordmark">Wardrobe</h1>
+      <span class="tagline">a tailoring lookbook</span>
+    </div>
+    <div class="mast-right">
+      <span class="folio" id="folio">—</span>
+      <button class="theme" id="themeBtn" aria-label="Switch light or dark">◐</button>
+    </div>
+  </header>
+
+  <main class="split">
+    <section class="panel" aria-label="Outfit controls">
+      <div class="panel-scroll">
+        <div class="search">
+          <input id="search" type="search" placeholder="Search a colour or plate…" autocomplete="off">
+        </div>
+        <nav class="cats" id="cats" aria-label="Category">
+          <button data-cat="All" class="active">All</button>
+          <button data-cat="Locked">Locked</button>
+          <button data-cat="Potential">Potential</button>
+          <button data-cat="Doubtful">Doubtful</button>
+        </nav>
+        <div id="controls"></div>
+      </div>
+      <footer class="stepper">
+        <button id="prev" type="button">‹ Prev</button>
+        <span class="count"><span id="idx">0</span> / <span id="total">0</span></span>
+        <button id="next" type="button">Next ›</button>
+      </footer>
+    </section>
+
+    <section class="plate" id="plate" aria-label="Outfit image">
+      <div class="viewtoggle" id="viewToggle" role="group" aria-label="Image fit">
+        <button type="button" data-mode="fit" class="active" title="Framed on a color field">Fit</button>
+        <button type="button" data-mode="full" title="Full-bleed magazine">Fill</button>
+      </div>
+      <div class="stage">
+        <img id="photo" alt="">
+        <div class="empty">No outfit matches that.</div>
+      </div>
+      <figcaption class="caption">
+        <span class="plate-no" id="plateNo">—</span>
+        <span class="cat-pill" id="catPill"></span>
+        <span class="descr" id="descr"></span>
+      </figcaption>
+    </section>
+  </main>
+</div>
+
+<script>window.OUTFITS = {{ outfits|tojson }};</script>
+<script>
+(function () {
+  var OUTFITS = window.OUTFITS || [];
+  var SLOTS = [
+    { key: "shirt",   label: "Shirt",   color: "shirt_color",   hex: "shirt_hex" },
+    { key: "trouser", label: "Trouser", color: "trouser_color", hex: "trouser_hex" },
+    { key: "belt",    label: "Belt",    color: "belt_color",    hex: "belt_hex" },
+    { key: "shoe",    label: "Shoe",    color: "shoe_color",    hex: "shoe_hex" },
+    { key: "dial",    label: "Dial",    color: "dial_color",    hex: "dial_hex" },
+    { key: "strap",   label: "Strap",   color: "strap_color",   hex: "strap_hex" }
+  ];
+  var SLOTMAP = {}; SLOTS.forEach(function (s) { SLOTMAP[s.key] = s; });
+  var GROUPS = [
+    { title: "Ensemble", keys: ["shirt", "trouser", "belt", "shoe"] },
+    { title: "Timepiece", keys: ["dial", "strap"] }
+  ];
+
+  var state = { cat: "All", q: "", currentId: OUTFITS.length ? OUTFITS[0].combo_id : null };
+  var els = {};
+
+  function pool() {
+    return OUTFITS.filter(function (o) {
+      if (state.cat !== "All" && o.category !== state.cat) return false;
+      if (state.q) {
+        var hay = [o.combo_id, o.shirt_color, o.trouser_color, o.belt_color,
+                   o.shoe_color, o.dial_color, o.strap_color].join(" ").toLowerCase();
+        if (hay.indexOf(state.q) === -1) return false;
+      }
+      return true;
+    });
+  }
+  function current(p) { p = p || pool(); return p.find(function (o) { return o.combo_id === state.currentId; }) || p[0]; }
+  function score(o, cur) { return SLOTS.reduce(function (n, s) { return n + (o[s.color] === cur[s.color] ? 1 : 0); }, 0); }
+
+  function onPick(key, val) {
+    var s = SLOTMAP[key], p = pool(), cur = current(p);
+    var cands = p.filter(function (o) { return o[s.color] === val; });
+    if (!cands.length) return;
+    cands.sort(function (a, b) {
+      return score(b, cur) - score(a, cur) || (a.combo_id < b.combo_id ? -1 : 1);
+    });
+    state.currentId = cands[0].combo_id;
+    render(true);
+  }
+  function step(d) {
+    var p = pool(); if (!p.length) return;
+    var i = p.findIndex(function (o) { return o.combo_id === state.currentId; });
+    if (i < 0) i = 0;
+    i = (i + d + p.length) % p.length;
+    state.currentId = p[i].combo_id; render(true);
+  }
+
+  function buildControls() {
+    var host = document.getElementById("controls");
+    GROUPS.forEach(function (g) {
+      var h = document.createElement("div"); h.className = "grp"; h.textContent = g.title; host.appendChild(h);
+      g.keys.forEach(function (key) {
+        var s = SLOTMAP[key];
+        var row = document.createElement("div"); row.className = "row";
+        row.innerHTML = '<span class="dot"></span><label>' + s.label +
+          '</label><span class="sel"><select aria-label="' + s.label + ' colour"></select></span><span class="hex"></span>';
+        host.appendChild(row);
+        var sel = row.querySelector("select");
+        sel.addEventListener("change", function (e) { onPick(key, e.target.value); });
+        els[key] = { dot: row.querySelector(".dot"), sel: sel, hex: row.querySelector(".hex") };
+      });
+    });
+  }
+
+  function render(swap) {
+    var p = pool();
+    var plate = document.getElementById("plate");
+    if (!p.length) {
+      plate.classList.add("is-empty");
+      document.getElementById("folio").textContent = "—";
+      document.getElementById("idx").textContent = "0";
+      document.getElementById("total").textContent = "0";
+      return;
+    }
+    plate.classList.remove("is-empty");
+    var cur = current(p); state.currentId = cur.combo_id;
+
+    SLOTS.forEach(function (s) {
+      var el = els[s.key];
+      var seen = {}, vals = [];
+      p.forEach(function (o) { if (!(o[s.color] in seen)) { seen[o[s.color]] = 1; vals.push([o[s.color], o[s.hex]]); } });
+      vals.sort(function (a, b) { return a[0].localeCompare(b[0]); });
+      el.sel.innerHTML = vals.map(function (v) {
+        return '<option value="' + v[0] + '">' + v[0] + "</option>";
+      }).join("");
+      el.sel.value = cur[s.color];
+      el.dot.style.background = cur[s.hex];
+      var hx = cur[s.hex] || "";
+      if (s.key === "shoe" && cur.shoe_type) hx = cur.shoe_type + " · " + hx;
+      el.hex.textContent = hx;
+    });
+
+    if (cur.amb_hex) plate.style.setProperty("--amb", cur.amb_hex);
+
+    var img = document.getElementById("photo");
+    if (swap && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      img.style.opacity = 0;
+      img.onload = function () { img.style.opacity = 1; };
+    } else { img.onload = null; img.style.opacity = 1; }
+    img.src = cur.img; img.alt = cur.combo_id + " outfit";
+
+    document.getElementById("plateNo").textContent = cur.combo_id;
+    var pill = document.getElementById("catPill");
+    pill.textContent = cur.category; pill.className = "cat-pill is-" + cur.category;
+    document.getElementById("descr").textContent =
+      cur.shirt_color + " shirt · " + cur.trouser_color + " trouser · " +
+      cur.shoe_color + " " + (cur.shoe_type ? cur.shoe_type.toLowerCase() : "shoe");
+
+    var i = p.findIndex(function (o) { return o.combo_id === cur.combo_id; });
+    document.getElementById("idx").textContent = i + 1;
+    document.getElementById("total").textContent = p.length;
+    document.getElementById("folio").textContent =
+      String(i + 1).padStart(2, "0") + " / " + String(p.length).padStart(2, "0");
+  }
+
+  // category
+  document.getElementById("cats").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    this.querySelectorAll("button").forEach(function (x) { x.classList.remove("active"); });
+    b.classList.add("active"); state.cat = b.dataset.cat; render(false);
+  });
+  // search
+  document.getElementById("search").addEventListener("input", function (e) {
+    state.q = e.target.value.trim().toLowerCase(); render(false);
+  });
+  // stepper + keys
+  document.getElementById("prev").addEventListener("click", function () { step(-1); });
+  document.getElementById("next").addEventListener("click", function () { step(1); });
+  document.addEventListener("keydown", function (e) {
+    if (/^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement.tagName)) return;
+    if (e.key === "ArrowLeft") { step(-1); e.preventDefault(); }
+    else if (e.key === "ArrowRight") { step(1); e.preventDefault(); }
+  });
+  // theme
+  var root = document.documentElement, saved = null;
+  try { saved = localStorage.getItem("wl-theme"); } catch (e) {}
+  if (saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
+  document.getElementById("themeBtn").addEventListener("click", function () {
+    var isDark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = isDark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("wl-theme", next); } catch (e) {}
+  });
+
+  // image-fit toggle (Fit / Fill)
+  var plateEl = document.getElementById("plate");
+  var vt = document.getElementById("viewToggle");
+  function setMode(m) {
+    m = m === "full" ? "full" : "fit";
+    if (m === "full") plateEl.setAttribute("data-mode", "full");
+    else plateEl.removeAttribute("data-mode");
+    vt.querySelectorAll("button").forEach(function (b) {
+      b.classList.toggle("active", b.dataset.mode === m);
+    });
+    try { localStorage.setItem("wl-fit", m); } catch (e) {}
+  }
+  vt.addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (b) setMode(b.dataset.mode);
+  });
+  var savedFit = null; try { savedFit = localStorage.getItem("wl-fit"); } catch (e) {}
+  setMode(savedFit === "full" ? "full" : "fit");
+
+  buildControls();
+  render(false);
+})();
+</script>
+</body>
+</html>

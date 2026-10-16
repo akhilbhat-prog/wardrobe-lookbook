@@ -1,0 +1,3082 @@
+[
+  {
+    "combo_id": "L-001",
+    "input_json": {
+      "combo_id": "L-001",
+      "category": "Locked",
+      "shirt_color": "White",
+      "shirt_hex": "#F7F7F2",
+      "trouser_color": "Navy",
+      "trouser_hex": "#1F3557",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-002",
+    "input_json": {
+      "combo_id": "L-002",
+      "category": "Locked",
+      "shirt_color": "White",
+      "shirt_hex": "#F7F7F2",
+      "trouser_color": "Charcoal",
+      "trouser_hex": "#414347",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-003",
+    "input_json": {
+      "combo_id": "L-003",
+      "category": "Locked",
+      "shirt_color": "White",
+      "shirt_hex": "#F7F7F2",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-004",
+    "input_json": {
+      "combo_id": "L-004",
+      "category": "Locked",
+      "shirt_color": "White",
+      "shirt_hex": "#F7F7F2",
+      "trouser_color": "Black",
+      "trouser_hex": "#1C1C1C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-005",
+    "input_json": {
+      "combo_id": "L-005",
+      "category": "Locked",
+      "shirt_color": "White",
+      "shirt_hex": "#F7F7F2",
+      "trouser_color": "Stone",
+      "trouser_hex": "#C8BBA5",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-006",
+    "input_json": {
+      "combo_id": "L-006",
+      "category": "Locked",
+      "shirt_color": "White",
+      "shirt_hex": "#F7F7F2",
+      "trouser_color": "Dark Brown",
+      "trouser_hex": "#5A4032",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-007",
+    "input_json": {
+      "combo_id": "L-007",
+      "category": "Locked",
+      "shirt_color": "Ivory",
+      "shirt_hex": "#F3EBDD",
+      "trouser_color": "Navy",
+      "trouser_hex": "#1F3557",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-008",
+    "input_json": {
+      "combo_id": "L-008",
+      "category": "Locked",
+      "shirt_color": "Ivory",
+      "shirt_hex": "#F3EBDD",
+      "trouser_color": "Charcoal",
+      "trouser_hex": "#414347",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-009",
+    "input_json": {
+      "combo_id": "L-009",
+      "category": "Locked",
+      "shirt_color": "Ivory",
+      "shirt_hex": "#F3EBDD",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-010",
+    "input_json": {
+      "combo_id": "L-010",
+      "category": "Locked",
+      "shirt_color": "Ivory",
+      "shirt_hex": "#F3EBDD",
+      "trouser_color": "Taupe",
+      "trouser_hex": "#A89B87",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-011",
+    "input_json": {
+      "combo_id": "L-011",
+      "category": "Locked",
+      "shirt_color": "Ivory",
+      "shirt_hex": "#F3EBDD",
+      "trouser_color": "Dark Brown",
+      "trouser_hex": "#5A4032",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Champagne",
+      "dial_hex": "#D8C28F",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-012",
+    "input_json": {
+      "combo_id": "L-012",
+      "category": "Locked",
+      "shirt_color": "Beige",
+      "shirt_hex": "#D8C8AD",
+      "trouser_color": "Navy",
+      "trouser_hex": "#1F3557",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-013",
+    "input_json": {
+      "combo_id": "L-013",
+      "category": "Locked",
+      "shirt_color": "Beige",
+      "shirt_hex": "#D8C8AD",
+      "trouser_color": "Charcoal",
+      "trouser_hex": "#414347",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-014",
+    "input_json": {
+      "combo_id": "L-014",
+      "category": "Locked",
+      "shirt_color": "Beige",
+      "shirt_hex": "#D8C8AD",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-015",
+    "input_json": {
+      "combo_id": "L-015",
+      "category": "Locked",
+      "shirt_color": "Beige",
+      "shirt_hex": "#D8C8AD",
+      "trouser_color": "Dark Olive",
+      "trouser_hex": "#505746",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-016",
+    "input_json": {
+      "combo_id": "L-016",
+      "category": "Locked",
+      "shirt_color": "Beige",
+      "shirt_hex": "#D8C8AD",
+      "trouser_color": "Dark Brown",
+      "trouser_hex": "#5A4032",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Champagne",
+      "dial_hex": "#D8C28F",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-017",
+    "input_json": {
+      "combo_id": "L-017",
+      "category": "Locked",
+      "shirt_color": "Light Grey",
+      "shirt_hex": "#D5D7D8",
+      "trouser_color": "Navy",
+      "trouser_hex": "#1F3557",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-018",
+    "input_json": {
+      "combo_id": "L-018",
+      "category": "Locked",
+      "shirt_color": "Light Grey",
+      "shirt_hex": "#D5D7D8",
+      "trouser_color": "Charcoal",
+      "trouser_hex": "#414347",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-019",
+    "input_json": {
+      "combo_id": "L-019",
+      "category": "Locked",
+      "shirt_color": "Light Grey",
+      "shirt_hex": "#D5D7D8",
+      "trouser_color": "Dark Grey",
+      "trouser_hex": "#55585C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-020",
+    "input_json": {
+      "combo_id": "L-020",
+      "category": "Locked",
+      "shirt_color": "Light Grey",
+      "shirt_hex": "#D5D7D8",
+      "trouser_color": "Black",
+      "trouser_hex": "#1C1C1C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-021",
+    "input_json": {
+      "combo_id": "L-021",
+      "category": "Locked",
+      "shirt_color": "Light Grey",
+      "shirt_hex": "#D5D7D8",
+      "trouser_color": "Dark Brown",
+      "trouser_hex": "#5A4032",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-022",
+    "input_json": {
+      "combo_id": "L-022",
+      "category": "Locked",
+      "shirt_color": "Dark Grey",
+      "shirt_hex": "#55585C",
+      "trouser_color": "Navy",
+      "trouser_hex": "#1F3557",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-023",
+    "input_json": {
+      "combo_id": "L-023",
+      "category": "Locked",
+      "shirt_color": "Dark Grey",
+      "shirt_hex": "#55585C",
+      "trouser_color": "Black",
+      "trouser_hex": "#1C1C1C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-024",
+    "input_json": {
+      "combo_id": "L-024",
+      "category": "Locked",
+      "shirt_color": "Dark Grey",
+      "shirt_hex": "#55585C",
+      "trouser_color": "Light Grey",
+      "trouser_hex": "#D5D7D8",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-025",
+    "input_json": {
+      "combo_id": "L-025",
+      "category": "Locked",
+      "shirt_color": "Dark Grey",
+      "shirt_hex": "#55585C",
+      "trouser_color": "Stone",
+      "trouser_hex": "#C8BBA5",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-026",
+    "input_json": {
+      "combo_id": "L-026",
+      "category": "Locked",
+      "shirt_color": "Black",
+      "shirt_hex": "#1C1C1C",
+      "trouser_color": "Charcoal",
+      "trouser_hex": "#414347",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-027",
+    "input_json": {
+      "combo_id": "L-027",
+      "category": "Locked",
+      "shirt_color": "Black",
+      "shirt_hex": "#1C1C1C",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-028",
+    "input_json": {
+      "combo_id": "L-028",
+      "category": "Locked",
+      "shirt_color": "Black",
+      "shirt_hex": "#1C1C1C",
+      "trouser_color": "Light Grey",
+      "trouser_hex": "#D5D7D8",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-029",
+    "input_json": {
+      "combo_id": "L-029",
+      "category": "Locked",
+      "shirt_color": "Black",
+      "shirt_hex": "#1C1C1C",
+      "trouser_color": "Stone",
+      "trouser_hex": "#C8BBA5",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Champagne",
+      "dial_hex": "#D8C28F",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-030",
+    "input_json": {
+      "combo_id": "L-030",
+      "category": "Locked",
+      "shirt_color": "Pale Blue",
+      "shirt_hex": "#C7DDEA",
+      "trouser_color": "Navy",
+      "trouser_hex": "#1F3557",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-031",
+    "input_json": {
+      "combo_id": "L-031",
+      "category": "Locked",
+      "shirt_color": "Pale Blue",
+      "shirt_hex": "#C7DDEA",
+      "trouser_color": "Charcoal",
+      "trouser_hex": "#414347",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-032",
+    "input_json": {
+      "combo_id": "L-032",
+      "category": "Locked",
+      "shirt_color": "Pale Blue",
+      "shirt_hex": "#C7DDEA",
+      "trouser_color": "Dark Grey",
+      "trouser_hex": "#55585C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-033",
+    "input_json": {
+      "combo_id": "L-033",
+      "category": "Locked",
+      "shirt_color": "Pale Blue",
+      "shirt_hex": "#C7DDEA",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-034",
+    "input_json": {
+      "combo_id": "L-034",
+      "category": "Locked",
+      "shirt_color": "Pale Blue",
+      "shirt_hex": "#C7DDEA",
+      "trouser_color": "Stone",
+      "trouser_hex": "#C8BBA5",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-035",
+    "input_json": {
+      "combo_id": "L-035",
+      "category": "Locked",
+      "shirt_color": "Light Blue",
+      "shirt_hex": "#DCEAF3",
+      "trouser_color": "Navy",
+      "trouser_hex": "#1F3557",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-036",
+    "input_json": {
+      "combo_id": "L-036",
+      "category": "Locked",
+      "shirt_color": "Light Blue",
+      "shirt_hex": "#DCEAF3",
+      "trouser_color": "Charcoal",
+      "trouser_hex": "#414347",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-037",
+    "input_json": {
+      "combo_id": "L-037",
+      "category": "Locked",
+      "shirt_color": "Light Blue",
+      "shirt_hex": "#DCEAF3",
+      "trouser_color": "Dark Grey",
+      "trouser_hex": "#55585C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-038",
+    "input_json": {
+      "combo_id": "L-038",
+      "category": "Locked",
+      "shirt_color": "Light Blue",
+      "shirt_hex": "#DCEAF3",
+      "trouser_color": "Stone",
+      "trouser_hex": "#C8BBA5",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-039",
+    "input_json": {
+      "combo_id": "L-039",
+      "category": "Locked",
+      "shirt_color": "Light Blue",
+      "shirt_hex": "#DCEAF3",
+      "trouser_color": "Beige",
+      "trouser_hex": "#D8C8AD",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-040",
+    "input_json": {
+      "combo_id": "L-040",
+      "category": "Locked",
+      "shirt_color": "French Blue",
+      "shirt_hex": "#4F78A8",
+      "trouser_color": "Charcoal",
+      "trouser_hex": "#414347",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-041",
+    "input_json": {
+      "combo_id": "L-041",
+      "category": "Locked",
+      "shirt_color": "French Blue",
+      "shirt_hex": "#4F78A8",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-042",
+    "input_json": {
+      "combo_id": "L-042",
+      "category": "Locked",
+      "shirt_color": "French Blue",
+      "shirt_hex": "#4F78A8",
+      "trouser_color": "Navy",
+      "trouser_hex": "#1F3557",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "White",
+      "dial_hex": "#F5F5F0",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-043",
+    "input_json": {
+      "combo_id": "L-043",
+      "category": "Locked",
+      "shirt_color": "French Blue",
+      "shirt_hex": "#4F78A8",
+      "trouser_color": "Light Grey",
+      "trouser_hex": "#D5D7D8",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-044",
+    "input_json": {
+      "combo_id": "L-044",
+      "category": "Locked",
+      "shirt_color": "French Blue",
+      "shirt_hex": "#4F78A8",
+      "trouser_color": "Stone",
+      "trouser_hex": "#C8BBA5",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-045",
+    "input_json": {
+      "combo_id": "L-045",
+      "category": "Locked",
+      "shirt_color": "Steel Blue",
+      "shirt_hex": "#607D94",
+      "trouser_color": "Charcoal",
+      "trouser_hex": "#414347",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-046",
+    "input_json": {
+      "combo_id": "L-046",
+      "category": "Locked",
+      "shirt_color": "Steel Blue",
+      "shirt_hex": "#607D94",
+      "trouser_color": "Navy",
+      "trouser_hex": "#1F3557",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-047",
+    "input_json": {
+      "combo_id": "L-047",
+      "category": "Locked",
+      "shirt_color": "Steel Blue",
+      "shirt_hex": "#607D94",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-048",
+    "input_json": {
+      "combo_id": "L-048",
+      "category": "Locked",
+      "shirt_color": "Steel Blue",
+      "shirt_hex": "#607D94",
+      "trouser_color": "Light Grey",
+      "trouser_hex": "#D5D7D8",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-049",
+    "input_json": {
+      "combo_id": "L-049",
+      "category": "Locked",
+      "shirt_color": "Steel Blue",
+      "shirt_hex": "#607D94",
+      "trouser_color": "Stone",
+      "trouser_hex": "#C8BBA5",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-050",
+    "input_json": {
+      "combo_id": "L-050",
+      "category": "Locked",
+      "shirt_color": "Navy",
+      "shirt_hex": "#1F3557",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-051",
+    "input_json": {
+      "combo_id": "L-051",
+      "category": "Locked",
+      "shirt_color": "Navy",
+      "shirt_hex": "#1F3557",
+      "trouser_color": "Light Grey",
+      "trouser_hex": "#D5D7D8",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-052",
+    "input_json": {
+      "combo_id": "L-052",
+      "category": "Locked",
+      "shirt_color": "Navy",
+      "shirt_hex": "#1F3557",
+      "trouser_color": "Charcoal",
+      "trouser_hex": "#414347",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-053",
+    "input_json": {
+      "combo_id": "L-053",
+      "category": "Locked",
+      "shirt_color": "Navy",
+      "shirt_hex": "#1F3557",
+      "trouser_color": "Stone",
+      "trouser_hex": "#C8BBA5",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-054",
+    "input_json": {
+      "combo_id": "L-054",
+      "category": "Locked",
+      "shirt_color": "Navy",
+      "shirt_hex": "#1F3557",
+      "trouser_color": "Beige",
+      "trouser_hex": "#D8C8AD",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-055",
+    "input_json": {
+      "combo_id": "L-055",
+      "category": "Locked",
+      "shirt_color": "Sage",
+      "shirt_hex": "#A8B5A0",
+      "trouser_color": "Navy",
+      "trouser_hex": "#1F3557",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-056",
+    "input_json": {
+      "combo_id": "L-056",
+      "category": "Locked",
+      "shirt_color": "Sage",
+      "shirt_hex": "#A8B5A0",
+      "trouser_color": "Charcoal",
+      "trouser_hex": "#414347",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-057",
+    "input_json": {
+      "combo_id": "L-057",
+      "category": "Locked",
+      "shirt_color": "Sage",
+      "shirt_hex": "#A8B5A0",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-058",
+    "input_json": {
+      "combo_id": "L-058",
+      "category": "Locked",
+      "shirt_color": "Sage",
+      "shirt_hex": "#A8B5A0",
+      "trouser_color": "Stone",
+      "trouser_hex": "#C8BBA5",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-059",
+    "input_json": {
+      "combo_id": "L-059",
+      "category": "Locked",
+      "shirt_color": "Sage",
+      "shirt_hex": "#A8B5A0",
+      "trouser_color": "Taupe",
+      "trouser_hex": "#A89B87",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-060",
+    "input_json": {
+      "combo_id": "L-060",
+      "category": "Locked",
+      "shirt_color": "Olive",
+      "shirt_hex": "#68705A",
+      "trouser_color": "Navy",
+      "trouser_hex": "#1F3557",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-061",
+    "input_json": {
+      "combo_id": "L-061",
+      "category": "Locked",
+      "shirt_color": "Olive",
+      "shirt_hex": "#68705A",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-062",
+    "input_json": {
+      "combo_id": "L-062",
+      "category": "Locked",
+      "shirt_color": "Olive",
+      "shirt_hex": "#68705A",
+      "trouser_color": "Charcoal",
+      "trouser_hex": "#414347",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-063",
+    "input_json": {
+      "combo_id": "L-063",
+      "category": "Locked",
+      "shirt_color": "Olive",
+      "shirt_hex": "#68705A",
+      "trouser_color": "Stone",
+      "trouser_hex": "#C8BBA5",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-064",
+    "input_json": {
+      "combo_id": "L-064",
+      "category": "Locked",
+      "shirt_color": "Olive",
+      "shirt_hex": "#68705A",
+      "trouser_color": "Beige",
+      "trouser_hex": "#D8C8AD",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Champagne",
+      "dial_hex": "#D8C28F",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-065",
+    "input_json": {
+      "combo_id": "L-065",
+      "category": "Locked",
+      "shirt_color": "Olive",
+      "shirt_hex": "#68705A",
+      "trouser_color": "Dark Brown",
+      "trouser_hex": "#5A4032",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-066",
+    "input_json": {
+      "combo_id": "L-066",
+      "category": "Locked",
+      "shirt_color": "Pale Pink",
+      "shirt_hex": "#E8C9C8",
+      "trouser_color": "Navy",
+      "trouser_hex": "#1F3557",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-067",
+    "input_json": {
+      "combo_id": "L-067",
+      "category": "Locked",
+      "shirt_color": "Pale Pink",
+      "shirt_hex": "#E8C9C8",
+      "trouser_color": "Charcoal",
+      "trouser_hex": "#414347",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-068",
+    "input_json": {
+      "combo_id": "L-068",
+      "category": "Locked",
+      "shirt_color": "Pale Pink",
+      "shirt_hex": "#E8C9C8",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-069",
+    "input_json": {
+      "combo_id": "L-069",
+      "category": "Locked",
+      "shirt_color": "Pale Pink",
+      "shirt_hex": "#E8C9C8",
+      "trouser_color": "Stone",
+      "trouser_hex": "#C8BBA5",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-070",
+    "input_json": {
+      "combo_id": "L-070",
+      "category": "Locked",
+      "shirt_color": "Pale Pink",
+      "shirt_hex": "#E8C9C8",
+      "trouser_color": "Beige",
+      "trouser_hex": "#D8C8AD",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-071",
+    "input_json": {
+      "combo_id": "L-071",
+      "category": "Locked",
+      "shirt_color": "Lavender",
+      "shirt_hex": "#D4C9DC",
+      "trouser_color": "Charcoal",
+      "trouser_hex": "#414347",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-072",
+    "input_json": {
+      "combo_id": "L-072",
+      "category": "Locked",
+      "shirt_color": "Lavender",
+      "shirt_hex": "#D4C9DC",
+      "trouser_color": "Navy",
+      "trouser_hex": "#1F3557",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-073",
+    "input_json": {
+      "combo_id": "L-073",
+      "category": "Locked",
+      "shirt_color": "Lavender",
+      "shirt_hex": "#D4C9DC",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-074",
+    "input_json": {
+      "combo_id": "L-074",
+      "category": "Locked",
+      "shirt_color": "Lavender",
+      "shirt_hex": "#D4C9DC",
+      "trouser_color": "Stone",
+      "trouser_hex": "#C8BBA5",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-075",
+    "input_json": {
+      "combo_id": "L-075",
+      "category": "Locked",
+      "shirt_color": "Lavender",
+      "shirt_hex": "#D4C9DC",
+      "trouser_color": "Taupe",
+      "trouser_hex": "#A89B87",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-076",
+    "input_json": {
+      "combo_id": "L-076",
+      "category": "Locked",
+      "shirt_color": "Dusty Rose",
+      "shirt_hex": "#B9878B",
+      "trouser_color": "Navy",
+      "trouser_hex": "#1F3557",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-077",
+    "input_json": {
+      "combo_id": "L-077",
+      "category": "Locked",
+      "shirt_color": "Dusty Rose",
+      "shirt_hex": "#B9878B",
+      "trouser_color": "Charcoal",
+      "trouser_hex": "#414347",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-078",
+    "input_json": {
+      "combo_id": "L-078",
+      "category": "Locked",
+      "shirt_color": "Dusty Rose",
+      "shirt_hex": "#B9878B",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-079",
+    "input_json": {
+      "combo_id": "L-079",
+      "category": "Locked",
+      "shirt_color": "Dusty Rose",
+      "shirt_hex": "#B9878B",
+      "trouser_color": "Taupe",
+      "trouser_hex": "#A89B87",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-080",
+    "input_json": {
+      "combo_id": "L-080",
+      "category": "Locked",
+      "shirt_color": "Dusty Rose",
+      "shirt_hex": "#B9878B",
+      "trouser_color": "Dark Brown",
+      "trouser_hex": "#5A4032",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Champagne",
+      "dial_hex": "#D8C28F",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-081",
+    "input_json": {
+      "combo_id": "L-081",
+      "category": "Locked",
+      "shirt_color": "Coffee Brown",
+      "shirt_hex": "#5A4032",
+      "trouser_color": "Stone",
+      "trouser_hex": "#C8BBA5",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-082",
+    "input_json": {
+      "combo_id": "L-082",
+      "category": "Locked",
+      "shirt_color": "Coffee Brown",
+      "shirt_hex": "#5A4032",
+      "trouser_color": "Taupe",
+      "trouser_hex": "#A89B87",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Champagne",
+      "dial_hex": "#D8C28F",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "L-083",
+    "input_json": {
+      "combo_id": "L-083",
+      "category": "Locked",
+      "shirt_color": "Coffee Brown",
+      "shirt_hex": "#5A4032",
+      "trouser_color": "Light Grey",
+      "trouser_hex": "#D5D7D8",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-084",
+    "input_json": {
+      "combo_id": "L-084",
+      "category": "Locked",
+      "shirt_color": "Coffee Brown",
+      "shirt_hex": "#5A4032",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-085",
+    "input_json": {
+      "combo_id": "L-085",
+      "category": "Locked",
+      "shirt_color": "Coffee Brown",
+      "shirt_hex": "#5A4032",
+      "trouser_color": "Navy",
+      "trouser_hex": "#1F3557",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-086",
+    "input_json": {
+      "combo_id": "L-086",
+      "category": "Locked",
+      "shirt_color": "Muted Mustard",
+      "shirt_hex": "#C5A64A",
+      "trouser_color": "Navy",
+      "trouser_hex": "#1F3557",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-087",
+    "input_json": {
+      "combo_id": "L-087",
+      "category": "Locked",
+      "shirt_color": "Muted Mustard",
+      "shirt_hex": "#C5A64A",
+      "trouser_color": "Charcoal",
+      "trouser_hex": "#414347",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "L-088",
+    "input_json": {
+      "combo_id": "L-088",
+      "category": "Locked",
+      "shirt_color": "Muted Mustard",
+      "shirt_hex": "#C5A64A",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "L-089",
+    "input_json": {
+      "combo_id": "L-089",
+      "category": "Locked",
+      "shirt_color": "Muted Mustard",
+      "shirt_hex": "#C5A64A",
+      "trouser_color": "Stone",
+      "trouser_hex": "#C8BBA5",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "D-001",
+    "input_json": {
+      "combo_id": "D-001",
+      "category": "Doubtful",
+      "shirt_color": "White",
+      "shirt_hex": "#F7F7F2",
+      "trouser_color": "Camel",
+      "trouser_hex": "#B68A5A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "D-002",
+    "input_json": {
+      "combo_id": "D-002",
+      "category": "Doubtful",
+      "shirt_color": "White",
+      "shirt_hex": "#F7F7F2",
+      "trouser_color": "Deep Burgundy",
+      "trouser_hex": "#542530",
+      "belt_color": "Oxblood",
+      "belt_hex": "#5A2630",
+      "shoe_color": "Oxblood",
+      "shoe_hex": "#5A2630",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Oxblood",
+      "strap_hex": "#5A2630"
+    }
+  },
+  {
+    "combo_id": "D-003",
+    "input_json": {
+      "combo_id": "D-003",
+      "category": "Doubtful",
+      "shirt_color": "Ivory",
+      "shirt_hex": "#F3EBDD",
+      "trouser_color": "Beige",
+      "trouser_hex": "#D8C8AD",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Champagne",
+      "dial_hex": "#D8C28F",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "D-004",
+    "input_json": {
+      "combo_id": "D-004",
+      "category": "Doubtful",
+      "shirt_color": "Ivory",
+      "shirt_hex": "#F3EBDD",
+      "trouser_color": "Camel",
+      "trouser_hex": "#B68A5A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "D-005",
+    "input_json": {
+      "combo_id": "D-005",
+      "category": "Doubtful",
+      "shirt_color": "Beige",
+      "shirt_hex": "#D8C8AD",
+      "trouser_color": "Taupe",
+      "trouser_hex": "#A89B87",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "D-006",
+    "input_json": {
+      "combo_id": "D-006",
+      "category": "Doubtful",
+      "shirt_color": "Beige",
+      "shirt_hex": "#D8C8AD",
+      "trouser_color": "Black",
+      "trouser_hex": "#1C1C1C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "D-007",
+    "input_json": {
+      "combo_id": "D-007",
+      "category": "Doubtful",
+      "shirt_color": "Dark Grey",
+      "shirt_hex": "#55585C",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "D-008",
+    "input_json": {
+      "combo_id": "D-008",
+      "category": "Doubtful",
+      "shirt_color": "Dark Grey",
+      "shirt_hex": "#55585C",
+      "trouser_color": "Dark Brown",
+      "trouser_hex": "#5A4032",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "D-009",
+    "input_json": {
+      "combo_id": "D-009",
+      "category": "Doubtful",
+      "shirt_color": "Black",
+      "shirt_hex": "#1C1C1C",
+      "trouser_color": "Navy",
+      "trouser_hex": "#1F3557",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "D-010",
+    "input_json": {
+      "combo_id": "D-010",
+      "category": "Doubtful",
+      "shirt_color": "Black",
+      "shirt_hex": "#1C1C1C",
+      "trouser_color": "Dark Brown",
+      "trouser_hex": "#5A4032",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "D-011",
+    "input_json": {
+      "combo_id": "D-011",
+      "category": "Doubtful",
+      "shirt_color": "Pale Blue",
+      "shirt_hex": "#C7DDEA",
+      "trouser_color": "Dark Olive",
+      "trouser_hex": "#505746",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "D-012",
+    "input_json": {
+      "combo_id": "D-012",
+      "category": "Doubtful",
+      "shirt_color": "Pale Blue",
+      "shirt_hex": "#C7DDEA",
+      "trouser_color": "Beige",
+      "trouser_hex": "#D8C8AD",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "D-013",
+    "input_json": {
+      "combo_id": "D-013",
+      "category": "Doubtful",
+      "shirt_color": "Light Blue",
+      "shirt_hex": "#DCEAF3",
+      "trouser_color": "Dark Olive",
+      "trouser_hex": "#505746",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "D-014",
+    "input_json": {
+      "combo_id": "D-014",
+      "category": "Doubtful",
+      "shirt_color": "Light Blue",
+      "shirt_hex": "#DCEAF3",
+      "trouser_color": "Deep Burgundy",
+      "trouser_hex": "#542530",
+      "belt_color": "Oxblood",
+      "belt_hex": "#5A2630",
+      "shoe_color": "Oxblood",
+      "shoe_hex": "#5A2630",
+      "shoe_type": "Derby",
+      "dial_color": "White",
+      "dial_hex": "#F5F5F0",
+      "strap_color": "Oxblood",
+      "strap_hex": "#5A2630"
+    }
+  },
+  {
+    "combo_id": "D-015",
+    "input_json": {
+      "combo_id": "D-015",
+      "category": "Doubtful",
+      "shirt_color": "French Blue",
+      "shirt_hex": "#4F78A8",
+      "trouser_color": "Dark Brown",
+      "trouser_hex": "#5A4032",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "D-016",
+    "input_json": {
+      "combo_id": "D-016",
+      "category": "Doubtful",
+      "shirt_color": "French Blue",
+      "shirt_hex": "#4F78A8",
+      "trouser_color": "Dark Olive",
+      "trouser_hex": "#505746",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "D-017",
+    "input_json": {
+      "combo_id": "D-017",
+      "category": "Doubtful",
+      "shirt_color": "Steel Blue",
+      "shirt_hex": "#607D94",
+      "trouser_color": "Dark Brown",
+      "trouser_hex": "#5A4032",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "D-018",
+    "input_json": {
+      "combo_id": "D-018",
+      "category": "Doubtful",
+      "shirt_color": "Steel Blue",
+      "shirt_hex": "#607D94",
+      "trouser_color": "Taupe",
+      "trouser_hex": "#A89B87",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "D-019",
+    "input_json": {
+      "combo_id": "D-019",
+      "category": "Doubtful",
+      "shirt_color": "Navy",
+      "shirt_hex": "#1F3557",
+      "trouser_color": "Dark Brown",
+      "trouser_hex": "#5A4032",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "D-020",
+    "input_json": {
+      "combo_id": "D-020",
+      "category": "Doubtful",
+      "shirt_color": "Navy",
+      "shirt_hex": "#1F3557",
+      "trouser_color": "Dark Olive",
+      "trouser_hex": "#505746",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "D-021",
+    "input_json": {
+      "combo_id": "D-021",
+      "category": "Doubtful",
+      "shirt_color": "Sage",
+      "shirt_hex": "#A8B5A0",
+      "trouser_color": "Black",
+      "trouser_hex": "#1C1C1C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "D-022",
+    "input_json": {
+      "combo_id": "D-022",
+      "category": "Doubtful",
+      "shirt_color": "Sage",
+      "shirt_hex": "#A8B5A0",
+      "trouser_color": "Dark Brown",
+      "trouser_hex": "#5A4032",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "D-023",
+    "input_json": {
+      "combo_id": "D-023",
+      "category": "Doubtful",
+      "shirt_color": "Olive",
+      "shirt_hex": "#68705A",
+      "trouser_color": "Black",
+      "trouser_hex": "#1C1C1C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "D-024",
+    "input_json": {
+      "combo_id": "D-024",
+      "category": "Doubtful",
+      "shirt_color": "Olive",
+      "shirt_hex": "#68705A",
+      "trouser_color": "Taupe",
+      "trouser_hex": "#A89B87",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "D-025",
+    "input_json": {
+      "combo_id": "D-025",
+      "category": "Doubtful",
+      "shirt_color": "Pale Pink",
+      "shirt_hex": "#E8C9C8",
+      "trouser_color": "Black",
+      "trouser_hex": "#1C1C1C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "D-026",
+    "input_json": {
+      "combo_id": "D-026",
+      "category": "Doubtful",
+      "shirt_color": "Pale Pink",
+      "shirt_hex": "#E8C9C8",
+      "trouser_color": "Olive",
+      "trouser_hex": "#68705A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "D-027",
+    "input_json": {
+      "combo_id": "D-027",
+      "category": "Doubtful",
+      "shirt_color": "Lavender",
+      "shirt_hex": "#D4C9DC",
+      "trouser_color": "Black",
+      "trouser_hex": "#1C1C1C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "D-028",
+    "input_json": {
+      "combo_id": "D-028",
+      "category": "Doubtful",
+      "shirt_color": "Lavender",
+      "shirt_hex": "#D4C9DC",
+      "trouser_color": "Dark Brown",
+      "trouser_hex": "#5A4032",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "D-029",
+    "input_json": {
+      "combo_id": "D-029",
+      "category": "Doubtful",
+      "shirt_color": "Dusty Rose",
+      "shirt_hex": "#B9878B",
+      "trouser_color": "Beige",
+      "trouser_hex": "#D8C8AD",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "D-030",
+    "input_json": {
+      "combo_id": "D-030",
+      "category": "Doubtful",
+      "shirt_color": "Dusty Rose",
+      "shirt_hex": "#B9878B",
+      "trouser_color": "Black",
+      "trouser_hex": "#1C1C1C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "D-031",
+    "input_json": {
+      "combo_id": "D-031",
+      "category": "Doubtful",
+      "shirt_color": "Coffee Brown",
+      "shirt_hex": "#5A4032",
+      "trouser_color": "Dark Brown",
+      "trouser_hex": "#5A4032",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "D-032",
+    "input_json": {
+      "combo_id": "D-032",
+      "category": "Doubtful",
+      "shirt_color": "Coffee Brown",
+      "shirt_hex": "#5A4032",
+      "trouser_color": "Dark Olive",
+      "trouser_hex": "#505746",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "D-033",
+    "input_json": {
+      "combo_id": "D-033",
+      "category": "Doubtful",
+      "shirt_color": "Muted Mustard",
+      "shirt_hex": "#C5A64A",
+      "trouser_color": "Dark Brown",
+      "trouser_hex": "#5A4032",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "D-034",
+    "input_json": {
+      "combo_id": "D-034",
+      "category": "Doubtful",
+      "shirt_color": "Muted Mustard",
+      "shirt_hex": "#C5A64A",
+      "trouser_color": "Beige",
+      "trouser_hex": "#D8C8AD",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Champagne",
+      "dial_hex": "#D8C28F",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "P-001",
+    "input_json": {
+      "combo_id": "P-001",
+      "category": "Potential",
+      "shirt_color": "White",
+      "shirt_hex": "#F7F7F2",
+      "trouser_color": "Light Grey",
+      "trouser_hex": "#D5D7D8",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "P-002",
+    "input_json": {
+      "combo_id": "P-002",
+      "category": "Potential",
+      "shirt_color": "White",
+      "shirt_hex": "#F7F7F2",
+      "trouser_color": "Deep Burgundy",
+      "trouser_hex": "#542530",
+      "belt_color": "Oxblood",
+      "belt_hex": "#5A2630",
+      "shoe_color": "Oxblood",
+      "shoe_hex": "#5A2630",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Oxblood",
+      "strap_hex": "#5A2630"
+    }
+  },
+  {
+    "combo_id": "P-003",
+    "input_json": {
+      "combo_id": "P-003",
+      "category": "Potential",
+      "shirt_color": "Ivory",
+      "shirt_hex": "#F3EBDD",
+      "trouser_color": "Stone",
+      "trouser_hex": "#C8BBA5",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "P-004",
+    "input_json": {
+      "combo_id": "P-004",
+      "category": "Potential",
+      "shirt_color": "Beige",
+      "shirt_hex": "#D8C8AD",
+      "trouser_color": "Medium Brown",
+      "trouser_hex": "#704A32",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "P-005",
+    "input_json": {
+      "combo_id": "P-005",
+      "category": "Potential",
+      "shirt_color": "Beige",
+      "shirt_hex": "#D8C8AD",
+      "trouser_color": "Dark Olive",
+      "trouser_hex": "#505746",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "P-006",
+    "input_json": {
+      "combo_id": "P-006",
+      "category": "Potential",
+      "shirt_color": "Light Grey",
+      "shirt_hex": "#D5D7D8",
+      "trouser_color": "Deep Burgundy",
+      "trouser_hex": "#542530",
+      "belt_color": "Oxblood",
+      "belt_hex": "#5A2630",
+      "shoe_color": "Oxblood",
+      "shoe_hex": "#5A2630",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Oxblood",
+      "strap_hex": "#5A2630"
+    }
+  },
+  {
+    "combo_id": "P-007",
+    "input_json": {
+      "combo_id": "P-007",
+      "category": "Potential",
+      "shirt_color": "Light Grey",
+      "shirt_hex": "#D5D7D8",
+      "trouser_color": "Medium Brown",
+      "trouser_hex": "#704A32",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "P-008",
+    "input_json": {
+      "combo_id": "P-008",
+      "category": "Potential",
+      "shirt_color": "Dark Grey",
+      "shirt_hex": "#55585C",
+      "trouser_color": "Dark Olive",
+      "trouser_hex": "#505746",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "P-009",
+    "input_json": {
+      "combo_id": "P-009",
+      "category": "Potential",
+      "shirt_color": "Black",
+      "shirt_hex": "#1C1C1C",
+      "trouser_color": "Dark Grey",
+      "trouser_hex": "#55585C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "P-010",
+    "input_json": {
+      "combo_id": "P-010",
+      "category": "Potential",
+      "shirt_color": "Pale Blue",
+      "shirt_hex": "#C7DDEA",
+      "trouser_color": "Light Grey",
+      "trouser_hex": "#D5D7D8",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "P-011",
+    "input_json": {
+      "combo_id": "P-011",
+      "category": "Potential",
+      "shirt_color": "Pale Blue",
+      "shirt_hex": "#C7DDEA",
+      "trouser_color": "Beige",
+      "trouser_hex": "#D8C8AD",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "P-012",
+    "input_json": {
+      "combo_id": "P-012",
+      "category": "Potential",
+      "shirt_color": "Light Blue",
+      "shirt_hex": "#DCEAF3",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "P-013",
+    "input_json": {
+      "combo_id": "P-013",
+      "category": "Potential",
+      "shirt_color": "Light Blue",
+      "shirt_hex": "#DCEAF3",
+      "trouser_color": "Dark Grey",
+      "trouser_hex": "#55585C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "P-014",
+    "input_json": {
+      "combo_id": "P-014",
+      "category": "Potential",
+      "shirt_color": "French Blue",
+      "shirt_hex": "#4F78A8",
+      "trouser_color": "Light Grey",
+      "trouser_hex": "#D5D7D8",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "P-015",
+    "input_json": {
+      "combo_id": "P-015",
+      "category": "Potential",
+      "shirt_color": "French Blue",
+      "shirt_hex": "#4F78A8",
+      "trouser_color": "Dark Grey",
+      "trouser_hex": "#55585C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Silver",
+      "dial_hex": "#C7C9CC",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "P-016",
+    "input_json": {
+      "combo_id": "P-016",
+      "category": "Potential",
+      "shirt_color": "Steel Blue",
+      "shirt_hex": "#607D94",
+      "trouser_color": "Dark Grey",
+      "trouser_hex": "#55585C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "P-017",
+    "input_json": {
+      "combo_id": "P-017",
+      "category": "Potential",
+      "shirt_color": "Steel Blue",
+      "shirt_hex": "#607D94",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "P-018",
+    "input_json": {
+      "combo_id": "P-018",
+      "category": "Potential",
+      "shirt_color": "Navy",
+      "shirt_hex": "#1F3557",
+      "trouser_color": "Camel",
+      "trouser_hex": "#B68A5A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "P-019",
+    "input_json": {
+      "combo_id": "P-019",
+      "category": "Potential",
+      "shirt_color": "Navy",
+      "shirt_hex": "#1F3557",
+      "trouser_color": "Dark Olive",
+      "trouser_hex": "#505746",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "P-020",
+    "input_json": {
+      "combo_id": "P-020",
+      "category": "Potential",
+      "shirt_color": "Sage",
+      "shirt_hex": "#A8B5A0",
+      "trouser_color": "Dark Grey",
+      "trouser_hex": "#55585C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "P-021",
+    "input_json": {
+      "combo_id": "P-021",
+      "category": "Potential",
+      "shirt_color": "Sage",
+      "shirt_hex": "#A8B5A0",
+      "trouser_color": "Dark Brown",
+      "trouser_hex": "#5A4032",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "P-022",
+    "input_json": {
+      "combo_id": "P-022",
+      "category": "Potential",
+      "shirt_color": "Olive",
+      "shirt_hex": "#68705A",
+      "trouser_color": "Dark Grey",
+      "trouser_hex": "#55585C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "P-023",
+    "input_json": {
+      "combo_id": "P-023",
+      "category": "Potential",
+      "shirt_color": "Olive",
+      "shirt_hex": "#68705A",
+      "trouser_color": "Taupe",
+      "trouser_hex": "#A89B87",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Cream",
+      "dial_hex": "#EFE3C5",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "P-024",
+    "input_json": {
+      "combo_id": "P-024",
+      "category": "Potential",
+      "shirt_color": "Pale Pink",
+      "shirt_hex": "#E8C9C8",
+      "trouser_color": "Taupe",
+      "trouser_hex": "#A89B87",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "P-025",
+    "input_json": {
+      "combo_id": "P-025",
+      "category": "Potential",
+      "shirt_color": "Lavender",
+      "shirt_hex": "#D4C9DC",
+      "trouser_color": "Beige",
+      "trouser_hex": "#D8C8AD",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "P-026",
+    "input_json": {
+      "combo_id": "P-026",
+      "category": "Potential",
+      "shirt_color": "Lavender",
+      "shirt_hex": "#D4C9DC",
+      "trouser_color": "Light Grey",
+      "trouser_hex": "#D5D7D8",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "P-027",
+    "input_json": {
+      "combo_id": "P-027",
+      "category": "Potential",
+      "shirt_color": "Dusty Rose",
+      "shirt_hex": "#B9878B",
+      "trouser_color": "Dark Grey",
+      "trouser_hex": "#55585C",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "P-028",
+    "input_json": {
+      "combo_id": "P-028",
+      "category": "Potential",
+      "shirt_color": "Coffee Brown",
+      "shirt_hex": "#5A4032",
+      "trouser_color": "Charcoal",
+      "trouser_hex": "#414347",
+      "belt_color": "Black",
+      "belt_hex": "#1C1C1C",
+      "shoe_color": "Black",
+      "shoe_hex": "#1C1C1C",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Black",
+      "strap_hex": "#1C1C1C"
+    }
+  },
+  {
+    "combo_id": "P-029",
+    "input_json": {
+      "combo_id": "P-029",
+      "category": "Potential",
+      "shirt_color": "Coffee Brown",
+      "shirt_hex": "#5A4032",
+      "trouser_color": "Stone",
+      "trouser_hex": "#C8BBA5",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  },
+  {
+    "combo_id": "P-030",
+    "input_json": {
+      "combo_id": "P-030",
+      "category": "Potential",
+      "shirt_color": "Muted Mustard",
+      "shirt_hex": "#C5A64A",
+      "trouser_color": "Medium Grey",
+      "trouser_hex": "#73777A",
+      "belt_color": "Dark Brown",
+      "belt_hex": "#3B2920",
+      "shoe_color": "Dark Brown",
+      "shoe_hex": "#3B2920",
+      "shoe_type": "Derby",
+      "dial_color": "Blue",
+      "dial_hex": "#315A86",
+      "strap_color": "Dark Brown",
+      "strap_hex": "#3B2920"
+    }
+  },
+  {
+    "combo_id": "P-031",
+    "input_json": {
+      "combo_id": "P-031",
+      "category": "Potential",
+      "shirt_color": "Muted Mustard",
+      "shirt_hex": "#C5A64A",
+      "trouser_color": "Stone",
+      "trouser_hex": "#C8BBA5",
+      "belt_color": "Medium Brown",
+      "belt_hex": "#704A32",
+      "shoe_color": "Medium Brown",
+      "shoe_hex": "#704A32",
+      "shoe_type": "Derby",
+      "dial_color": "Green",
+      "dial_hex": "#3F5B45",
+      "strap_color": "Medium Brown",
+      "strap_hex": "#704A32"
+    }
+  }
+]
