@@ -21,13 +21,14 @@
     --c-locked: #3F7D5A;
     --c-potential: #937327;
     --c-doubtful: #A4505B;
+    --c-custom: #4A6FA5;
     --shadow: 0 2px 26px rgba(28,26,23,.16);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --paper: #191816; --ink: #ECE8E0; --mat: #221F1C; --line: #35312B;
       --muted: #9C968A; --accent: #CB7F89; --accent-soft: rgba(203,127,137,.16);
-      --c-locked: #6FB890; --c-potential: #D6B45E; --c-doubtful: #D98791;
+      --c-locked: #6FB890; --c-potential: #D6B45E; --c-doubtful: #D98791; --c-custom: #86A6D6;
       --shadow: 0 2px 30px rgba(0,0,0,.45);
       color-scheme: dark;
     }
@@ -35,7 +36,7 @@
   :root[data-theme="dark"] {
     --paper: #191816; --ink: #ECE8E0; --mat: #221F1C; --line: #35312B;
     --muted: #9C968A; --accent: #CB7F89; --accent-soft: rgba(203,127,137,.16);
-    --c-locked: #6FB890; --c-potential: #D6B45E; --c-doubtful: #D98791;
+    --c-locked: #6FB890; --c-potential: #D6B45E; --c-doubtful: #D98791; --c-custom: #86A6D6;
     --shadow: 0 2px 30px rgba(0,0,0,.45);
     color-scheme: dark;
   }
@@ -102,6 +103,14 @@
   .cats button:hover { border-color: var(--accent); color: var(--accent); }
   .cats button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
+  /* "+ Add outfit" — opens the custom-outfit form */
+  .addbtn {
+    width: 100%; margin: 10px 0 2px; padding: 9px 14px; border: 1px dashed var(--line);
+    background: transparent; color: var(--muted); border-radius: 10px; font: inherit;
+    font-size: 13px; cursor: pointer; transition: color .12s, border-color .12s;
+  }
+  .addbtn:hover { border-color: var(--accent); color: var(--accent); }
+
   .grp {
     font-family: "Bodoni Moda", Georgia, serif; font-style: italic; font-size: 19px;
     color: var(--ink); margin: 22px 0 2px;
@@ -139,6 +148,28 @@
     font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums;
     text-align: right; white-space: nowrap;
   }
+  /* pattern controls: a second line under a pattern-capable row (e.g. Shirt) */
+  .patline { grid-column: 1 / -1; display: flex; align-items: center; gap: 10px; padding-top: 10px; }
+  .patlabel {
+    font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .09em;
+  }
+  .sel-pat { min-width: 118px; flex: none; }
+  .patacc {
+    width: 22px; height: 22px; padding: 0; border: 1px solid var(--line); border-radius: 50%;
+    background: none; cursor: pointer; transition: opacity .12s;
+  }
+  .patacc::-webkit-color-swatch-wrapper { padding: 0; }
+  .patacc::-webkit-color-swatch { border: none; border-radius: 50%; }
+  .patacc::-moz-color-swatch { border: none; border-radius: 50%; }
+  .patacc:disabled { cursor: default; }
+  .patname {
+    flex: 1; min-width: 0; background: transparent; border: none;
+    border-bottom: 1px solid var(--line); color: var(--ink); font: inherit; font-size: 13px;
+    padding: 2px 0; transition: opacity .12s, border-color .12s;
+  }
+  .patname::placeholder { color: var(--muted); }
+  .patname:focus-visible { outline: none; border-bottom-color: var(--accent); }
+  .patname:disabled { cursor: default; }
 
   /* ---- stepper ---- */
   .stepper {
@@ -210,7 +241,73 @@
   .cat-pill.is-Locked::before { background: var(--c-locked); }
   .cat-pill.is-Potential::before { background: var(--c-potential); }
   .cat-pill.is-Doubtful::before { background: var(--c-doubtful); }
+  .cat-pill.is-Custom::before { background: var(--c-custom); }
   .alt-tag { display: none; font-style: italic; }
+
+  /* caption affordances shown only for user-created outfits */
+  .mark.edit, .mark.del { display: none; }
+  .mark.del:hover { color: var(--c-doubtful); border-color: var(--c-doubtful); }
+
+  /* ---- color card: the plate visual for a custom outfit with no photo ---- */
+  .swatchcard {
+    display: none; height: 100%; aspect-ratio: 2 / 3; max-width: 100%;
+    background: var(--paper); border: 1px solid var(--line); border-radius: 4px;
+    box-shadow: var(--shadow); padding: 26px; flex-direction: column; justify-content: center; gap: 2px;
+  }
+  .plate.is-card .swatchcard { display: flex; }
+  .plate.is-card img { display: none; }
+  .sc-row { display: flex; align-items: center; gap: 14px; padding: 11px 2px; border-bottom: 1px solid var(--line); }
+  .sc-row:last-child { border-bottom: none; }
+  .sc-sw { width: 30px; height: 30px; border-radius: 50%; flex: none; box-shadow: inset 0 0 0 1px rgba(128,128,128,.4); }
+  .sc-slot { font-size: 11px; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); width: 66px; flex: none; }
+  .sc-name { font-family: "Bodoni Moda", Georgia, serif; font-size: 20px; color: var(--ink); }
+  .sc-div { font-size: 11px; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin: 10px 0 2px; }
+
+  /* ---- add / edit outfit modal ---- */
+  .modal {
+    display: none; position: fixed; inset: 0; z-index: 100; align-items: center; justify-content: center;
+    background: rgba(28,26,23,.46); padding: 20px;
+  }
+  .modal.open { display: flex; }
+  .modal-card {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow);
+    width: min(540px, 100%); max-height: 90vh; overflow: auto; padding: 22px 24px;
+  }
+  .modal-title { font-family: "Bodoni Moda", Georgia, serif; font-size: 25px; margin: 0 0 14px; }
+  .mf-row { display: grid; grid-template-columns: 74px 1fr 92px 30px; align-items: center; gap: 10px; padding: 7px 0; }
+  .mf-hex {
+    min-width: 0; width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line);
+    color: var(--ink); font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px;
+    padding: 4px 0; text-transform: lowercase;
+  }
+  .mf-hex::placeholder { color: var(--muted); text-transform: none; }
+  .mf-hex:focus-visible { outline: none; border-bottom-color: var(--accent); }
+  .mf-sub .mf-hex { flex: 0 0 82px; }
+  .mf-row label { font-size: 13px; color: var(--ink); }
+  .mf-row input[type="text"] {
+    min-width: 0; background: transparent; border: none; border-bottom: 1px solid var(--line);
+    color: var(--ink); font: inherit; font-size: 14px; padding: 4px 0;
+  }
+  .mf-row input[type="text"]:focus-visible { outline: none; border-bottom-color: var(--accent); }
+  .mf-row input[type="color"] {
+    width: 30px; height: 26px; padding: 0; border: 1px solid var(--line); border-radius: 6px;
+    background: none; cursor: pointer; justify-self: end;
+  }
+  .mf-sub { display: flex; align-items: center; gap: 10px; padding: 6px 0 2px; }
+  .mf-sub .sel { min-width: 118px; flex: none; }
+  .mf-div { font-size: 11px; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin: 16px 0 2px; border-top: 1px solid var(--line); padding-top: 12px; }
+  .mf-photo { display: flex; align-items: center; gap: 12px; margin: 14px 0 4px; }
+  .mf-photo img { width: 52px; height: 78px; object-fit: cover; border-radius: 4px; border: 1px solid var(--line); display: none; }
+  .mf-photo img.on { display: block; }
+  .mf-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+  .mf-actions button {
+    border: 1px solid var(--line); background: transparent; color: var(--ink); font: inherit; font-size: 13px;
+    padding: 8px 18px; border-radius: 999px; cursor: pointer; transition: color .12s, border-color .12s, background .12s;
+  }
+  .mf-actions button:hover { border-color: var(--accent); color: var(--accent); }
+  .mf-actions button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .mf-actions button.primary:hover { color: #fff; opacity: .92; }
+  .mf-err { color: var(--c-doubtful); font-size: 12px; min-height: 15px; margin-top: 6px; }
   .alt-tag.on { display: inline-flex; }
   .descr { color: var(--muted); font-size: 13px; }
 
@@ -369,7 +466,9 @@
           <button data-cat="Wishlist" id="catWishlist">Wishlist</button>
           <button data-cat="Owned" id="catOwned">Owned</button>
           <button data-cat="Alternatives" id="catAlt">Alternatives</button>
+          <button data-cat="Custom" id="catCustom">Custom</button>
         </nav>
+        <button class="addbtn" id="addBtn" type="button">+ Add outfit</button>
         <div id="controls"></div>
       </div>
       <footer class="stepper">
@@ -386,6 +485,7 @@
       </div>
       <div class="stage">
         <img id="photo" alt="">
+        <div class="swatchcard" id="swatchCard" aria-label="Outfit colours"></div>
         <div class="empty">No outfit matches that.</div>
       </div>
       <figcaption class="caption">
@@ -396,10 +496,29 @@
         <span class="marks">
           <button class="mark" id="wishBtn" type="button" aria-pressed="false">♡ Wishlist</button>
           <button class="mark" id="ownBtn" type="button" aria-pressed="false">✓ In wardrobe</button>
+          <button class="mark edit" id="editBtn" type="button">✎ Edit</button>
+          <button class="mark del" id="delBtn" type="button">✕ Delete</button>
         </span>
       </figcaption>
     </section>
   </main>
+</div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Add outfit">
+  <div class="modal-card">
+    <h2 class="modal-title" id="modalTitle">Add outfit</h2>
+    <div id="modalFields"></div>
+    <div class="mf-photo">
+      <img id="mfThumb" alt="attached photo preview">
+      <input type="file" id="mfFile" accept="image/*" aria-label="Attach a photo">
+      <button type="button" class="mark del" id="mfPhotoClear" style="display:none">remove photo</button>
+    </div>
+    <div class="mf-err" id="mfErr"></div>
+    <div class="mf-actions">
+      <button type="button" id="mfCancel">Cancel</button>
+      <button type="button" class="primary" id="mfSave">Save to wishlist</button>
+    </div>
+  </div>
 </div>
 
 <script>window.OUTFITS = {{ outfits|tojson }};</script>
@@ -407,7 +526,8 @@
 (function () {
   var OUTFITS = window.OUTFITS || [];
   var SLOTS = [
-    { key: "shirt",   label: "Shirt",   color: "shirt_color",   hex: "shirt_hex" },
+    { key: "shirt",   label: "Shirt",   color: "shirt_color",   hex: "shirt_hex",
+      pattern: "shirt_pattern", accent: "shirt_accent_color", accentHex: "shirt_accent_hex" },
     { key: "trouser", label: "Trouser", color: "trouser_color", hex: "trouser_hex" },
     { key: "belt",    label: "Belt",    color: "belt_color",    hex: "belt_hex" },
     { key: "shoe",    label: "Shoe",    color: "shoe_color",    hex: "shoe_hex" },
@@ -419,36 +539,100 @@
     { title: "Ensemble", keys: ["shirt", "trouser", "belt", "shoe"] },
     { title: "Timepiece", keys: ["dial", "strap"] }
   ];
+  // Allowed pattern names; "Solid" is the default (no pattern). swatchStyle() draws the rest.
+  var PATTERNS = ["Solid", "Stripe", "Micro Check", "Gingham", "Windowpane", "Dots"];
+  var DEFAULT_ACCENT = "#4a6fa5";   // denim blue, the starting accent for a new pattern
+  var DEFAULT_ACCENT_NAME = "Blue"; // starting accent name, shown in the label until edited
 
   var state = {
     cat: "All", q: "", currentId: OUTFITS.length ? OUTFITS[0].combo_id : null,
     lock: null,                          // null | { key, val }
     wardrobeItems: {}, wishlistItems: {}, // item keys -> true (garments owned / wanted)
+    patterns: {},                        // "combo_id|slot" -> { pattern, accent, accentHex } overrides
+    custom: [],                          // user-created outfits (also merged into OUTFITS)
     invView: "wardrobe"                  // which set the inventory shows
   };
   var els = {};
 
-  // ---- item model: a garment is (slot, colour) [+ shoe_type]; outfits bulk-add garments ----
+  // ---- item model: a garment is (slot, colour) [+ shoe_type] [+ pattern + accent]; outfits bulk-add --
+  // A patterned garment (e.g. a white shirt with a blue micro-check) carries an optional pattern name
+  // and accent colour. Solids have no pattern and behave exactly as before (same key, label, swatch).
+  function patternOf(slotKey, o) {
+    var s = SLOTMAP[slotKey];
+    if (!s.pattern) return null;                       // slot doesn't support patterns
+    var pat = o[s.pattern];                             // a pattern baked into the outfit data wins
+    if (pat && pat !== "Solid") {
+      return { pattern: pat, accent: o[s.accent] || "", accentHex: o[s.accentHex] || "" };
+    }
+    var ov = state.patterns[o.combo_id + "|" + slotKey];   // else a per-outfit override set in the panel
+    if (ov && ov.pattern && ov.pattern !== "Solid") {
+      return { pattern: ov.pattern, accent: ov.accent || "", accentHex: ov.accentHex || "" };
+    }
+    return null;                                        // solid
+  }
+  function garmentLabel(slotKey, o) {
+    var s = SLOTMAP[slotKey], base = o[s.color];
+    if (slotKey === "shoe" && o.shoe_type) base += " " + o.shoe_type;
+    var pat = patternOf(slotKey, o);                   // "White · Blue Micro Check"
+    if (pat) base += (pat.accent ? " · " + pat.accent : "") + " " + pat.pattern;
+    return base;
+  }
   function itemKey(slotKey, o) {
     var s = SLOTMAP[slotKey], k = slotKey + "|" + o[s.color];
     if (slotKey === "shoe" && o.shoe_type) k += "|" + o.shoe_type;
+    var pat = patternOf(slotKey, o);                   // distinct identity for a patterned garment
+    if (pat) k += "|" + pat.pattern + "|" + pat.accent;
     return k;
   }
-  function itemsOf(o) { return SLOTS.map(function (s) { return itemKey(s.key, o); }); }
+  // A garment per filled slot. Slots left blank (e.g. the watch on a custom outfit) are skipped,
+  // so they don't become empty "dial|" garments or block outfitOwned/outfitWished.
+  function itemsOf(o) {
+    return SLOTS.filter(function (s) { return o[s.color]; }).map(function (s) { return itemKey(s.key, o); });
+  }
 
-  // One display record per distinct garment (colour + hex), for the hover popovers.
+  // A CSS background for a garment swatch: the ground colour for solids, a pattern overlay in the
+  // accent colour otherwise. Falls back to the ground colour for any pattern name it doesn't draw.
+  function swatchStyle(baseHex, pattern, accentHex) {
+    var base = baseHex || "#888";
+    if (!pattern || pattern === "Solid" || !accentHex) return base;
+    var a = accentHex;
+    switch (pattern) {
+      case "Dots":
+        return "radial-gradient(" + a + " 28%, transparent 30%) 0 0 / 5px 5px, " + base;
+      case "Stripe":
+        return "repeating-linear-gradient(90deg, " + a + " 0 1.5px, transparent 1.5px 5px), " + base;
+      case "Micro Check":
+      case "Gingham":
+        return "repeating-linear-gradient(0deg, " + a + " 0 1px, transparent 1px 4px)," +
+               "repeating-linear-gradient(90deg, " + a + " 0 1px, transparent 1px 4px), " + base;
+      case "Windowpane":
+        return "repeating-linear-gradient(0deg, " + a + " 0 1px, transparent 1px 8px)," +
+               "repeating-linear-gradient(90deg, " + a + " 0 1px, transparent 1px 8px), " + base;
+      default:
+        return base;
+    }
+  }
+
+  // One display record per distinct garment, for the hover popovers (colour + optional pattern).
+  // Rebuilt whenever pattern overrides change, since a pattern alters a garment's identity (itemKey).
   var ITEM_INFO = {};
-  OUTFITS.forEach(function (o) {
-    SLOTS.forEach(function (s) {
-      var k = itemKey(s.key, o);
-      if (!ITEM_INFO[k]) {
-        ITEM_INFO[k] = {
-          slot: s.key, hex: o[s.hex],
-          label: o[s.color] + (s.key === "shoe" && o.shoe_type ? " " + o.shoe_type : "")
-        };
-      }
+  function buildItemInfo() {
+    for (var old in ITEM_INFO) delete ITEM_INFO[old];
+    OUTFITS.forEach(function (o) {
+      SLOTS.forEach(function (s) {
+        var k = itemKey(s.key, o);
+        if (!ITEM_INFO[k]) {
+          var pat = patternOf(s.key, o);
+          ITEM_INFO[k] = {
+            slot: s.key, hex: o[s.hex],
+            pattern: pat ? pat.pattern : "", accentHex: pat ? pat.accentHex : "",
+            label: garmentLabel(s.key, o)
+          };
+        }
+      });
     });
-  });
+  }
+  buildItemInfo();
   function hexToHsl(hex) {
     hex = String(hex || "").replace("#", "");
     if (hex.length === 3) hex = hex.replace(/./g, "$&$&");
@@ -518,6 +702,38 @@
   // A toggle changed: save, rebuild inventory, re-render controls.
   function afterChange() { persist(); buildInventory(); render(false); }
 
+  // Set (or clear) the pattern override for the *current outfit's* garment in `slotKey`, keyed by
+  // combo_id so a patterned and a plain shirt of the same colour can coexist across outfits. The
+  // pattern (name + accent) renames the garment's identity (itemKey), so this outfit's owned /
+  // wishlisted holder is carried from the old key to the new one — you don't lose the shirt.
+  function setPattern(slotKey, pattern, accent, accentHex) {
+    var cur = current(); if (!cur) return;
+    var mapKey = cur.combo_id + "|" + slotKey;
+    var okey = itemKey(slotKey, cur);                  // identity before
+    if (!pattern || pattern === "Solid") {
+      delete state.patterns[mapKey];
+    } else {
+      state.patterns[mapKey] = {
+        pattern: pattern,
+        accent: accent || DEFAULT_ACCENT_NAME,
+        accentHex: accentHex || DEFAULT_ACCENT
+      };
+    }
+    var nkey = itemKey(slotKey, cur);                  // identity after
+    if (nkey !== okey) {                               // move only *this outfit's* holder to the new id
+      ["wardrobeItems", "wishlistItems"].forEach(function (which) {
+        var set = state[which], h = set[okey];
+        if (h && h[cur.combo_id]) {
+          delete h[cur.combo_id];
+          if (!Object.keys(h).length) delete set[okey];
+          (set[nkey] || (set[nkey] = {}))[cur.combo_id] = true;
+        }
+      });
+    }
+    buildItemInfo();
+    afterChange();
+  }
+
   // Category / search / wishlist / owned filter (everything except the lock).
   function basePool() {
     return OUTFITS.filter(function (o) {
@@ -526,7 +742,8 @@
       else if (state.cat === "Alternatives") { if (!outfitAlternative(o)) return false; }
       else if (state.cat !== "All" && o.category !== state.cat) return false;
       if (state.q) {
-        var hay = [o.combo_id, o.shirt_color, o.trouser_color, o.belt_color,
+        var hay = [o.combo_id, o.shirt_color, o.shirt_pattern, o.shirt_accent_color,
+                   o.trouser_color, o.belt_color,
                    o.shoe_color, o.dial_color, o.strap_color].join(" ").toLowerCase();
         if (hay.indexOf(state.q) === -1) return false;
       }
@@ -620,6 +837,28 @@
         });
         els[key] = { row: row, dot: row.querySelector(".dot"), sel: sel,
                      hex: row.querySelector(".hex"), lock: lockEl, wish: wishEl, own: ownEl };
+
+        // Pattern-capable slots (e.g. Shirt) get a second line: pattern + accent colour.
+        if (s.pattern) {
+          var pat = document.createElement("div"); pat.className = "patline";
+          pat.innerHTML = '<span class="patlabel">Pattern</span>' +
+            '<span class="sel sel-pat"><select class="patsel" aria-label="' + s.label +
+              ' pattern">' +
+              PATTERNS.map(function (p) { return '<option>' + p + '</option>'; }).join("") +
+            '</select></span>' +
+            '<input type="color" class="patacc" aria-label="' + s.label +
+              ' accent colour" value="' + DEFAULT_ACCENT + '">' +
+            '<input type="text" class="patname" aria-label="' + s.label +
+              ' accent name" placeholder="accent name">';
+          row.appendChild(pat);
+          var patSel = pat.querySelector(".patsel"), patAcc = pat.querySelector(".patacc"),
+              patName = pat.querySelector(".patname");
+          var applyPat = function () { setPattern(key, patSel.value, patName.value.trim(), patAcc.value); };
+          patSel.addEventListener("change", applyPat);
+          patAcc.addEventListener("input", applyPat);
+          patName.addEventListener("change", applyPat);   // on blur/enter, not every keystroke
+          els[key].patSel = patSel; els[key].patAcc = patAcc; els[key].patName = patName;
+        }
       });
     });
   }
@@ -628,10 +867,18 @@
     var p = pool();
     var plate = document.getElementById("plate");
     if (!p.length) {
-      plate.classList.add("is-empty");
+      plate.classList.add("is-empty"); plate.classList.remove("is-card");
       document.getElementById("folio").textContent = "—";
       document.getElementById("idx").textContent = "0";
       document.getElementById("total").textContent = "0";
+      // Clear the controls so a now-gone outfit's colours don't linger in the Ensemble selects.
+      SLOTS.forEach(function (s) {
+        var el = els[s.key];
+        el.sel.innerHTML = ""; el.dot.style.background = "transparent"; el.hex.textContent = "";
+        if (el.patSel) { el.patSel.value = "Solid"; el.patName.value = ""; }
+      });
+      document.getElementById("editBtn").style.display = "none";
+      document.getElementById("delBtn").style.display = "none";
       updateChips();
       return;
     }
@@ -652,7 +899,18 @@
         return '<option value="' + v[0] + '">' + v[0] + "</option>";
       }).join("");
       el.sel.value = locked ? state.lock.val : cur[s.color];
-      el.dot.style.background = cur[s.hex];
+      var curPat = patternOf(s.key, cur);
+      el.dot.style.background = swatchStyle(cur[s.hex], curPat && curPat.pattern, curPat && curPat.accentHex);
+      // Reflect the current garment's pattern override in its row's pattern controls.
+      if (el.patSel) {
+        el.patSel.value = curPat ? curPat.pattern : "Solid";
+        if (curPat && curPat.accentHex) el.patAcc.value = curPat.accentHex;
+        el.patName.value = curPat ? (curPat.accent || "") : "";
+        var isSolid = el.patSel.value === "Solid";
+        el.patAcc.disabled = isSolid; el.patName.disabled = isSolid;
+        el.patAcc.style.opacity = isSolid ? ".4" : "1";
+        el.patName.style.opacity = isSolid ? ".4" : "1";
+      }
       var hx = cur[s.hex] || "";
       if (s.key === "shoe" && cur.shoe_type) hx = cur.shoe_type + " · " + hx;
       el.hex.textContent = hx;
@@ -676,18 +934,30 @@
 
     if (cur.amb_hex) plate.style.setProperty("--amb", cur.amb_hex);
 
+    // A custom outfit with no attached photo shows the generated colour card instead of the <img>.
     var img = document.getElementById("photo");
-    if (swap && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      img.style.opacity = 0;
-      img.onload = function () { img.style.opacity = 1; };
-    } else { img.onload = null; img.style.opacity = 1; }
-    img.src = cur.img; img.alt = cur.combo_id + " outfit";
+    if (cur.custom && !cur.img) {
+      plate.classList.add("is-card");
+      document.getElementById("swatchCard").innerHTML = buildSwatchCard(cur);
+      img.onload = null;
+    } else {
+      plate.classList.remove("is-card");
+      if (swap && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        img.style.opacity = 0;
+        img.onload = function () { img.style.opacity = 1; };
+      } else { img.onload = null; img.style.opacity = 1; }
+      img.src = cur.img; img.alt = cur.combo_id + " outfit";
+    }
+
+    // Edit / Delete only for user-created outfits.
+    document.getElementById("editBtn").style.display = cur.custom ? "inline-flex" : "none";
+    document.getElementById("delBtn").style.display = cur.custom ? "inline-flex" : "none";
 
     document.getElementById("plateNo").textContent = cur.combo_id;
     var pill = document.getElementById("catPill");
     pill.textContent = cur.category; pill.className = "cat-pill is-" + cur.category;
     document.getElementById("descr").textContent =
-      cur.shirt_color + " shirt · " + cur.trouser_color + " trouser · " +
+      garmentLabel("shirt", cur) + " shirt · " + cur.trouser_color + " trouser · " +
       cur.shoe_color + " " + (cur.shoe_type ? cur.shoe_type.toLowerCase() : "shoe");
 
     var i = p.findIndex(function (o) { return o.combo_id === cur.combo_id; });
@@ -723,7 +993,9 @@
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           wardrobe: toKeyed(state.wardrobeItems),
-          wishlist: toKeyed(state.wishlistItems)
+          wishlist: toKeyed(state.wishlistItems),
+          patterns: state.patterns,
+          custom: state.custom
         })
       });
     } catch (e) {}
@@ -739,7 +1011,7 @@
       var infos = spectrumSort(keys.map(function (k) { return ITEM_INFO[k]; }).filter(Boolean));
       var rows = infos.map(function (it) {
         return '<span class="inv-popitem"><span class="inv-sw" style="background:' +
-          (it.hex || "#888") + '"></span>' + esc(it.label) + "</span>";
+          swatchStyle(it.hex, it.pattern, it.accentHex) + '"></span>' + esc(it.label) + "</span>";
       }).join("");
       html += '<div class="inv-tile" tabindex="0"><span class="inv-count-label">' +
         s.label + "s · " + n + '</span><div class="inv-pop">' + rows + "</div></div>";
@@ -821,6 +1093,245 @@
     this.querySelectorAll("button").forEach(function (x) { x.classList.remove("active"); });
     b.classList.add("active"); state.invView = b.dataset.view; buildInventory();
   });
+  // ---- custom (user-created) outfits ----------------------------------------------------------
+  // The generated colour card shown in the plate when a custom outfit has no attached photo.
+  function buildSwatchCard(o) {
+    var html = "";
+    GROUPS.forEach(function (g, gi) {
+      var rows = "";
+      g.keys.forEach(function (key) {
+        var s = SLOTMAP[key];
+        if (!o[s.color]) return;                      // skip blank slots (e.g. an omitted watch)
+        var pat = patternOf(key, o);
+        var bg = swatchStyle(o[s.hex], pat && pat.pattern, pat && pat.accentHex);
+        rows += '<div class="sc-row"><span class="sc-sw" style="background:' + bg + '"></span>' +
+          '<span class="sc-slot">' + s.label + '</span>' +
+          '<span class="sc-name">' + esc(garmentLabel(key, o)) + '</span></div>';
+      });
+      if (rows && gi > 0) html += '<div class="sc-div">' + g.title + '</div>';
+      html += rows;
+    });
+    return html || '<div class="sc-row"><span class="sc-name">No colours set.</span></div>';
+  }
+
+  function nextCustomId() {
+    var max = 0;
+    OUTFITS.forEach(function (o) {
+      var m = /^U-(\d+)$/.exec(o.combo_id || "");
+      if (m) max = Math.max(max, parseInt(m[1], 10));
+    });
+    return "U-" + String(max + 1).padStart(3, "0");
+  }
+
+  var editingId = null, pendingImg = "";
+  function gf(id) { var e = document.getElementById(id); return e ? e.value : ""; }
+  function sf(id, v) { var e = document.getElementById(id); if (e) e.value = v; }
+  // Normalise typed hex ("4a6fa5", "#ABC", "#4a6fa5") to "#rrggbb", or null if not a valid hex.
+  function normHex(v) {
+    v = String(v || "").trim().replace(/^#/, "");
+    if (/^[0-9a-fA-F]{3}$/.test(v)) v = v.replace(/./g, "$&$&");
+    return /^[0-9a-fA-F]{6}$/.test(v) ? "#" + v.toLowerCase() : null;
+  }
+
+  // Build the form fields once, generated from SLOTS (watch group under an optional divider).
+  function buildModalFields() {
+    var html = "";
+    GROUPS.forEach(function (g, gi) {
+      if (gi > 0) html += '<div class="mf-div">' + g.title + ' (optional)</div>';
+      g.keys.forEach(function (key) {
+        var s = SLOTMAP[key];
+        html += '<div class="mf-row"><label>' + s.label + '</label>' +
+          '<input type="text" id="mf-' + key + '-name" placeholder="colour name" autocomplete="off">' +
+          '<input type="text" class="mf-hex" id="mf-' + key + '-hextext" data-hexfor="mf-' + key +
+            '-hex" placeholder="#rrggbb" autocomplete="off" spellcheck="false" aria-label="' + s.label + ' hex">' +
+          '<input type="color" id="mf-' + key + '-hex" value="#cccccc" data-textid="mf-' + key +
+            '-hextext" aria-label="' + s.label + ' colour swatch"></div>';
+        if (key === "shoe") {
+          html += '<div class="mf-sub"><span class="patlabel">Type</span>' +
+            '<input type="text" id="mf-shoe-type" class="patname" placeholder="e.g. Derby" autocomplete="off"></div>';
+        }
+        if (s.pattern) {
+          html += '<div class="mf-sub"><span class="patlabel">Pattern</span>' +
+            '<span class="sel sel-pat"><select id="mf-' + key + '-pat" aria-label="' + s.label + ' pattern">' +
+              PATTERNS.map(function (p) { return '<option>' + p + '</option>'; }).join("") +
+            '</select></span>' +
+            '<input type="text" class="mf-hex" id="mf-' + key + '-acchextext" data-hexfor="mf-' + key +
+              '-acchex" placeholder="#rrggbb" autocomplete="off" spellcheck="false" aria-label="accent hex">' +
+            '<input type="color" id="mf-' + key + '-acchex" value="' + DEFAULT_ACCENT + '" data-textid="mf-' + key +
+              '-acchextext" aria-label="accent colour swatch">' +
+            '<input type="text" id="mf-' + key + '-accname" class="patname" placeholder="accent name" autocomplete="off"></div>';
+        }
+      });
+    });
+    document.getElementById("modalFields").innerHTML = html;
+  }
+
+  // Keep each hex text field and its colour swatch in sync (hex text is the source of truth).
+  document.getElementById("modalFields").addEventListener("input", function (e) {
+    var t = e.target;
+    if (t.dataset && t.dataset.hexfor) {                 // typed hex -> swatch
+      var h = normHex(t.value);
+      if (h) sf(t.dataset.hexfor, h);
+    } else if (t.type === "color" && t.dataset && t.dataset.textid) {  // swatch -> hex text
+      sf(t.dataset.textid, t.value);
+    }
+  });
+
+  function updatePhotoThumb() {
+    var t = document.getElementById("mfThumb"), clr = document.getElementById("mfPhotoClear");
+    if (pendingImg) { t.src = pendingImg; t.classList.add("on"); clr.style.display = ""; }
+    else { t.removeAttribute("src"); t.classList.remove("on"); clr.style.display = "none"; }
+  }
+
+  function openModal(o) {
+    editingId = o ? o.combo_id : null;
+    pendingImg = o && o.img ? o.img : "";
+    document.getElementById("modalTitle").textContent = o ? "Edit outfit" : "Add outfit";
+    document.getElementById("mfSave").textContent = o ? "Save changes" : "Save to wishlist";
+    document.getElementById("mfErr").textContent = "";
+    SLOTS.forEach(function (s) {
+      sf("mf-" + s.key + "-name", o ? (o[s.color] || "") : "");
+      var hex = (o && o[s.hex]) ? o[s.hex] : "#cccccc";
+      sf("mf-" + s.key + "-hex", hex); sf("mf-" + s.key + "-hextext", hex);
+      if (s.pattern) {
+        sf("mf-" + s.key + "-pat", (o && o[s.pattern]) ? o[s.pattern] : "Solid");
+        var ah = (o && o[s.accentHex]) ? o[s.accentHex] : DEFAULT_ACCENT;
+        sf("mf-" + s.key + "-acchex", ah); sf("mf-" + s.key + "-acchextext", ah);
+        sf("mf-" + s.key + "-accname", (o && o[s.accent]) ? o[s.accent] : "");
+      }
+    });
+    sf("mf-shoe-type", (o && o.shoe_type) ? o.shoe_type : "Derby");
+    updatePhotoThumb();
+    document.getElementById("modal").classList.add("open");
+  }
+  function closeModal() { document.getElementById("modal").classList.remove("open"); }
+
+  function readForm() {
+    var o = { category: "Custom", custom: true };
+    SLOTS.forEach(function (s) {
+      var name = gf("mf-" + s.key + "-name").trim();
+      if (!name) return;
+      o[s.color] = name;
+      o[s.hex] = normHex(gf("mf-" + s.key + "-hextext")) || gf("mf-" + s.key + "-hex");
+      if (s.pattern) {
+        var pat = gf("mf-" + s.key + "-pat");
+        if (pat && pat !== "Solid") {
+          o[s.pattern] = pat;
+          o[s.accent] = gf("mf-" + s.key + "-accname").trim() || DEFAULT_ACCENT_NAME;
+          o[s.accentHex] = normHex(gf("mf-" + s.key + "-acchextext")) || gf("mf-" + s.key + "-acchex");
+        }
+      }
+    });
+    var st = gf("mf-shoe-type").trim();
+    if (st && o.shoe_color) o.shoe_type = st;
+    o.amb_hex = o.shirt_hex || o.trouser_hex || "";
+    o.img = pendingImg || "";
+    return o;
+  }
+
+  function saveModal() {
+    var o = readForm();
+    var need = ["shirt", "trouser", "belt", "shoe"];
+    for (var i = 0; i < need.length; i++) {
+      var s = SLOTMAP[need[i]];
+      if (!o[s.color]) {
+        document.getElementById("mfErr").textContent = "Please set a colour for " + s.label + ".";
+        return;
+      }
+    }
+    if (editingId) {
+      var oIdx = OUTFITS.findIndex(function (c) { return c.combo_id === editingId; });
+      var cIdx = state.custom.findIndex(function (c) { return c.combo_id === editingId; });
+      var old = OUTFITS[oIdx];
+      var wasOwned = outfitOwned(old), wasWished = outfitWished(old);
+      removeOutfitWardrobe(old); removeOutfitWishlist(old);   // drop holders under old identity
+      o.combo_id = editingId;
+      if (oIdx >= 0) OUTFITS[oIdx] = o;
+      if (cIdx >= 0) state.custom[cIdx] = o;
+      buildItemInfo();
+      if (wasOwned) addOutfitWardrobe(o); else if (wasWished) addOutfitWishlist(o);
+    } else {
+      o.combo_id = nextCustomId();
+      state.custom.push(o); OUTFITS.push(o);
+      buildItemInfo();
+      addOutfitWishlist(o);                                   // creating it wishlists it
+      setCat("Custom");
+    }
+    state.currentId = o.combo_id;
+    closeModal();
+    afterChange();
+  }
+
+  function deleteCustom() {
+    var o = current(); if (!o || !o.custom) return;
+    removeOutfitWardrobe(o); removeOutfitWishlist(o);
+    state.custom = state.custom.filter(function (c) { return c.combo_id !== o.combo_id; });
+    var idx = OUTFITS.findIndex(function (c) { return c.combo_id === o.combo_id; });
+    if (idx >= 0) OUTFITS.splice(idx, 1);
+    buildItemInfo();
+    state.currentId = null;                                   // render() falls back to first in pool
+    if (!pool().length) { state.lock = null; setCat("All"); }  // don't strand on a now-empty filter
+    afterChange();
+  }
+
+  function setCat(cat) {
+    state.cat = cat;
+    document.getElementById("cats").querySelectorAll("button").forEach(function (b) {
+      b.classList.toggle("active", b.dataset.cat === cat);
+    });
+  }
+
+  // Downscale an attached photo to a 2:3 JPEG data URL (cover-crop, max ~1000px tall).
+  document.getElementById("mfFile").addEventListener("change", function (e) {
+    var f = e.target.files && e.target.files[0]; e.target.value = ""; if (!f) return;
+    var reader = new FileReader();
+    reader.onload = function () {
+      var im = new Image();
+      im.onload = function () {
+        var tAR = 2 / 3, H = Math.min(1000, im.naturalHeight || 1000), W = H * tAR;
+        var cv = document.createElement("canvas"); cv.width = Math.round(W); cv.height = Math.round(H);
+        var ctx = cv.getContext("2d");
+        var sAR = im.naturalWidth / im.naturalHeight, sw, sh, sx, sy;
+        if (sAR > tAR) { sh = im.naturalHeight; sw = sh * tAR; sx = (im.naturalWidth - sw) / 2; sy = 0; }
+        else { sw = im.naturalWidth; sh = sw / tAR; sx = 0; sy = (im.naturalHeight - sh) / 2; }
+        ctx.drawImage(im, sx, sy, sw, sh, 0, 0, cv.width, cv.height);
+        try { pendingImg = cv.toDataURL("image/jpeg", 0.82); } catch (err) { pendingImg = ""; }
+        updatePhotoThumb();
+      };
+      im.src = reader.result;
+    };
+    reader.readAsDataURL(f);
+  });
+  document.getElementById("mfPhotoClear").addEventListener("click", function () {
+    pendingImg = ""; updatePhotoThumb();
+  });
+  document.getElementById("addBtn").addEventListener("click", function () { openModal(null); });
+  document.getElementById("editBtn").addEventListener("click", function () {
+    var o = current(); if (o && o.custom) openModal(o);
+  });
+  document.getElementById("mfCancel").addEventListener("click", closeModal);
+  document.getElementById("mfSave").addEventListener("click", saveModal);
+  document.getElementById("modal").addEventListener("click", function (e) {
+    if (e.target === this) closeModal();   // click the backdrop to dismiss
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && document.getElementById("modal").classList.contains("open")) closeModal();
+  });
+  // Delete: two-click confirm (no blocking dialog).
+  (function () {
+    var del = document.getElementById("delBtn"), armed = false, timer = null;
+    del.addEventListener("click", function () {
+      if (!armed) {
+        armed = true; del.textContent = "✕ Confirm?";
+        timer = setTimeout(function () { armed = false; del.textContent = "✕ Delete"; }, 3000);
+        return;
+      }
+      clearTimeout(timer); armed = false; del.textContent = "✕ Delete";
+      deleteCustom();
+    });
+  })();
+  buildModalFields();
+
   buildControls();
   // Replay a persisted set through `add` (which enforces the own-wins / skip-owned rules).
   // `src` is either { key: [holders] } (current) or [key,...] (legacy, one "manual" holder).
@@ -838,6 +1349,30 @@
   fetch("/api/state")
     .then(function (r) { return r.json(); })
     .then(function (st) {
+      // Pattern overrides first, so garment identities (itemKeys) are final before holders hydrate.
+      if (st && st.patterns && typeof st.patterns === "object") {
+        Object.keys(st.patterns).forEach(function (k) {
+          var v = st.patterns[k];
+          if (v && typeof v.pattern === "string" && v.pattern && v.pattern !== "Solid") {
+            state.patterns[k] = {
+              pattern: v.pattern,
+              accent: typeof v.accent === "string" ? v.accent : "",
+              accentHex: String(v.accentHex || DEFAULT_ACCENT)
+            };
+          }
+        });
+      }
+      // Custom outfits: merge into OUTFITS (same shape) so all machinery treats them as outfits.
+      if (st && Array.isArray(st.custom)) {
+        st.custom.forEach(function (c) {
+          if (c && typeof c.combo_id === "string" && c.combo_id) {
+            c.category = "Custom"; c.custom = true;
+            state.custom.push(c); OUTFITS.push(c);
+          }
+        });
+      }
+      // Rebuild once now that both pattern overrides and custom outfits are in place, before holders.
+      buildItemInfo();
       // Accept the current shape { key: [holders] } and the legacy flat array [key,...]
       // (one "manual" holder). Wardrobe wins, so seed it first and skip owned garments in wishlist.
       hydrate(st && st.wardrobe, function (k, by) { addItemWardrobe(k, by); });

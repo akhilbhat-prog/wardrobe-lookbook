@@ -20,7 +20,11 @@ OUT_FILE = os.path.join(HERE, "viewer_data.json")
 
 # Flat fields the viewer's dropdowns / breakdown read off each outfit.
 VIEWER_KEYS = [
-    "shirt_color", "shirt_hex", "trouser_color", "trouser_hex",
+    "shirt_color", "shirt_hex",
+    # Optional shirt pattern: name ("Solid"/"Micro Check"/"Stripe"/...) + accent colour.
+    # Absent on solid shirts; the viewer treats a missing/"Solid" pattern as a plain colour.
+    "shirt_pattern", "shirt_accent_color", "shirt_accent_hex",
+    "trouser_color", "trouser_hex",
     "belt_color", "belt_hex", "shoe_color", "shoe_hex", "shoe_type",
     "dial_color", "dial_hex", "strap_color", "strap_hex",
 ]

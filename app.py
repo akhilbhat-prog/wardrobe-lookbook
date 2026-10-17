@@ -35,7 +35,17 @@ DATA_JSON = resource_path("viewer_data.json")
 # intact. Item keys look like "shirt|White" or "shoe|Dark Brown|Derby". Lives under %APPDATA% so it
 # survives app reinstalls and is editable outside the app; falls back next to the code in dev / on
 # platforms without APPDATA. A legacy flat list ["shirt|White", ...] is still accepted on read.
-DEFAULT_STATE = {"wardrobe": {}, "wishlist": {}}
+DEFAULT_STATE = {"wardrobe": {}, "wishlist": {}, "patterns": {}, "custom": []}
+
+# Fields kept on a user-created ("custom") outfit, same flat shape as a viewer_data.json outfit.
+_CUSTOM_STR_KEYS = (
+    "amb_hex", "img",
+    "shirt_color", "shirt_hex", "shirt_pattern", "shirt_accent_color", "shirt_accent_hex",
+    "trouser_color", "trouser_hex", "belt_color", "belt_hex",
+    "shoe_color", "shoe_hex", "shoe_type",
+    "dial_color", "dial_hex", "strap_color", "strap_hex",
+)
+_MAX_IMG = 6 * 1024 * 1024  # ~6 MB cap on an attached photo's data URL
 
 
 def _clean_set(value):
@@ -61,6 +71,57 @@ def _clean_set(value):
     return out
 
 
+def _clean_patterns(value):
+    """Normalise the pattern overrides to { "combo_id|slot": {pattern, accent, accentHex} }.
+
+    Panel-set, per-user layer over the outfit data (the outfit source is never written). Drops
+    anything malformed or "Solid" so a hand-edited file can't break the viewer.
+    """
+    out = {}
+    if isinstance(value, dict):
+        for k, v in value.items():
+            if not isinstance(k, str) or not isinstance(v, dict):
+                continue
+            pat = v.get("pattern")
+            if not isinstance(pat, str) or not pat or pat == "Solid":
+                continue
+            acc = v.get("accentHex")
+            name = v.get("accent")
+            out[k] = {
+                "pattern": pat,
+                "accent": name if isinstance(name, str) else "",
+                "accentHex": acc if isinstance(acc, str) else "",
+            }
+    return out
+
+
+def _clean_custom(value):
+    """Normalise user-created outfits to a list of flat outfit dicts (same shape as viewer_data).
+
+    Per-user layer in state.json; the built outfit data is never written. Keeps only known string
+    fields, requires a combo_id, forces category "Custom" and custom=True, and drops an oversized
+    attached image so a bad payload can't bloat the file.
+    """
+    out = []
+    if not isinstance(value, list):
+        return out
+    for item in value:
+        if not isinstance(item, dict):
+            continue
+        cid = item.get("combo_id")
+        if not isinstance(cid, str) or not cid:
+            continue
+        rec = {"combo_id": cid, "category": "Custom", "custom": True}
+        for k in _CUSTOM_STR_KEYS:
+            v = item.get(k)
+            if isinstance(v, str) and v:
+                if k == "img" and len(v) > _MAX_IMG:
+                    continue
+                rec[k] = v
+        out.append(rec)
+    return out
+
+
 def state_path():
     base = os.environ.get("APPDATA")
     if base:
@@ -76,11 +137,13 @@ def load_state():
         with open(state_path(), "r", encoding="utf-8") as f:
             data = json.load(f)
     except (FileNotFoundError, ValueError, OSError):
-        return {"wardrobe": {}, "wishlist": {}}
+        return {"wardrobe": {}, "wishlist": {}, "patterns": {}, "custom": []}
     # Normalise to key -> holders, so a hand-edited or legacy file can't break the app.
     return {
         "wardrobe": _clean_set(data.get("wardrobe")),
         "wishlist": _clean_set(data.get("wishlist")),
+        "patterns": _clean_patterns(data.get("patterns")),
+        "custom": _clean_custom(data.get("custom")),
     }
 
 
@@ -127,6 +190,8 @@ def api_state():
         clean = {
             "wardrobe": _clean_set(body.get("wardrobe")),
             "wishlist": _clean_set(body.get("wishlist")),
+            "patterns": _clean_patterns(body.get("patterns")),
+            "custom": _clean_custom(body.get("custom")),
         }
         save_state(clean)
         return jsonify(clean)
