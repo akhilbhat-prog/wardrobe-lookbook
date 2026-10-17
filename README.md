@@ -5,6 +5,12 @@ time: pick a colour for any garment (shirt, trouser, belt, shoe, watch dial/stra
 the nearest matching real outfit, with a backdrop-tinted image pool, a **Fit / Fill** image toggle,
 category filter, search, keyboard navigation, and light/dark themes.
 
+You can also **lock** one garment to constrain the rest, build a **wardrobe** and a **wishlist** at
+the garment level (per-row ♡/✓, or bulk-add a whole outfit), and watch a live **inventory** count
+strip at the top (with a Wardrobe/Wishlist toggle and a display-font switcher). The wardrobe and
+wishlist persist to `state.json` under `%APPDATA%\Wardrobe Lookbook\` (served by `GET`/`POST
+/api/state`), so they survive restarts and app reinstalls.
+
 It ships two ways from the same code:
 
 - **Web / dev:** a Flask app you open in a browser.

@@ -2,6 +2,16 @@
 
 Next features to build, in priority order. Tomorrow starts here.
 
+> **Done 2026-10-17:** items 1–4 below shipped (see CHANGELOG). Persistence landed as a writable
+> `%APPDATA%\Wardrobe Lookbook\state.json` (Flask `GET`/`POST /api/state`); inventory items are
+> distinct *(slot, colour)* across owned outfits, all six slots, grouped by slot with a usage
+> count; Wishlist/Owned also added as filter chips; lock is one field at a time and session-only.
+> Garments are now reference-counted by holder, so removing one of two outfits that share a garment
+> keeps the garment and the other outfit intact (state.json stores garment → holder lists).
+> Wishlist/Owned filter pills are now outfit-level (only outfits you explicitly added); a new
+> **Alternatives** pill lists outfits composable from owned garments but not added. All derived
+> from holders — no schema change.
+
 ## 1. Lock a config to constrain the set
 - Add a **lock toggle** per garment dropdown (shirt, trouser, belt, shoe, dial, strap).
 - When a field is **locked** to a value:

@@ -10,8 +10,9 @@ Runs both as a dev server (python app.py) and inside the packaged desktop build 
 import json
 import os
 import sys
+import tempfile
 
-from flask import Flask, jsonify, render_template, send_from_directory
+from flask import Flask, jsonify, render_template, request, send_from_directory
 
 
 def resource_path(rel):
@@ -26,6 +27,75 @@ if not os.path.isdir(IMAGE_DIR):
     IMAGE_DIR = resource_path("wardrobe_images")
 
 DATA_JSON = resource_path("viewer_data.json")
+
+# Writable per-user state: the wardrobe (owned garments) and wishlist (wanted garments). Each is a
+# map of item key -> list of *holders* that keep the garment in the set: outfit ids (combo_id) plus
+# a "manual" sentinel for garments added directly. A garment stays until its last holder is removed,
+# so removing one of two outfits that share a garment leaves the garment (and the other outfit)
+# intact. Item keys look like "shirt|White" or "shoe|Dark Brown|Derby". Lives under %APPDATA% so it
+# survives app reinstalls and is editable outside the app; falls back next to the code in dev / on
+# platforms without APPDATA. A legacy flat list ["shirt|White", ...] is still accepted on read.
+DEFAULT_STATE = {"wardrobe": {}, "wishlist": {}}
+
+
+def _clean_set(value):
+    """Normalise a persisted set to { item_key: [holder, ...] }.
+
+    Accepts the current dict shape (key -> list of holders) and the legacy flat list of keys
+    (each becomes a single "manual" holder), so a hand-edited or pre-release file can't break.
+    """
+    out = {}
+    if isinstance(value, dict):
+        for k, holders in value.items():
+            if not isinstance(k, str):
+                continue
+            if isinstance(holders, list):
+                hs = [str(h) for h in holders if isinstance(h, (str, int))]
+            else:
+                hs = []
+            out[k] = hs or ["manual"]
+    elif isinstance(value, list):
+        for k in value:
+            if isinstance(k, (str, int)):
+                out[str(k)] = ["manual"]
+    return out
+
+
+def state_path():
+    base = os.environ.get("APPDATA")
+    if base:
+        base = os.path.join(base, "Wardrobe Lookbook")
+    else:
+        base = os.path.dirname(os.path.abspath(__file__))
+    os.makedirs(base, exist_ok=True)
+    return os.path.join(base, "state.json")
+
+
+def load_state():
+    try:
+        with open(state_path(), "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except (FileNotFoundError, ValueError, OSError):
+        return {"wardrobe": {}, "wishlist": {}}
+    # Normalise to key -> holders, so a hand-edited or legacy file can't break the app.
+    return {
+        "wardrobe": _clean_set(data.get("wardrobe")),
+        "wishlist": _clean_set(data.get("wishlist")),
+    }
+
+
+def save_state(obj):
+    """Atomically write state.json (temp file in the same dir, then replace)."""
+    path = state_path()
+    fd, tmp = tempfile.mkstemp(dir=os.path.dirname(path), suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            json.dump(obj, f, ensure_ascii=False)
+        os.replace(tmp, path)
+    except BaseException:
+        if os.path.exists(tmp):
+            os.remove(tmp)
+        raise
 
 app = Flask(
     __name__,
@@ -48,6 +118,19 @@ def index():
 @app.route("/api/combinations")
 def api_combinations():
     return jsonify(load_outfits())
+
+
+@app.route("/api/state", methods=["GET", "POST"])
+def api_state():
+    if request.method == "POST":
+        body = request.get_json(silent=True) or {}
+        clean = {
+            "wardrobe": _clean_set(body.get("wardrobe")),
+            "wishlist": _clean_set(body.get("wishlist")),
+        }
+        save_state(clean)
+        return jsonify(clean)
+    return jsonify(load_state())
 
 
 @app.route("/images/<path:fname>")

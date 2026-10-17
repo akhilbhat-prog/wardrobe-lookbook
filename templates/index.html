@@ -107,9 +107,21 @@
     color: var(--ink); margin: 22px 0 2px;
   }
   .row {
-    display: grid; grid-template-columns: 18px 80px 1fr auto; align-items: center;
-    gap: 12px; padding-block: 12px; border-bottom: 1px solid var(--line);
+    display: grid; grid-template-columns: 18px 66px 1fr auto auto; align-items: center;
+    gap: 9px; padding-block: 12px; border-bottom: 1px solid var(--line);
   }
+  .row.is-locked { background: var(--accent-soft); border-radius: 6px; }
+  .rowacts { display: flex; gap: 1px; justify-self: end; }
+  .rowacts button {
+    width: 23px; height: 23px; padding: 0; border: none; background: transparent;
+    color: var(--muted); cursor: pointer; font-size: 13px; line-height: 1; border-radius: 6px;
+    opacity: .5; transition: color .12s, opacity .12s;
+  }
+  .rowacts button:hover { opacity: 1; color: var(--accent); }
+  .rowacts button.on { opacity: 1; }
+  .rowacts .wishbtn.on { color: var(--accent); }
+  .rowacts .ownbtn.on { color: var(--c-locked); }
+  .rowacts .lockbtn.on { color: var(--accent); }
   .dot { width: 18px; height: 18px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(128,128,128,.35); }
   .row label { font-size: 14px; color: var(--ink); }
   .sel { position: relative; min-width: 0; }
@@ -198,6 +210,8 @@
   .cat-pill.is-Locked::before { background: var(--c-locked); }
   .cat-pill.is-Potential::before { background: var(--c-potential); }
   .cat-pill.is-Doubtful::before { background: var(--c-doubtful); }
+  .alt-tag { display: none; font-style: italic; }
+  .alt-tag.on { display: inline-flex; }
   .descr { color: var(--muted); font-size: 13px; }
 
   /* image-fit toggle: Fit (framed on pool) vs Fill (full-bleed magazine) */
@@ -230,8 +244,79 @@
   .plate[data-mode="full"] .cat-pill { color: rgba(255,255,255,.88); }
   .plate[data-mode="full"] .descr { color: rgba(255,255,255,.82); text-shadow: 0 1px 6px rgba(0,0,0,.4); }
 
+  /* mark toggles in the caption (wishlist / owned) */
+  .marks { margin-left: auto; display: flex; gap: 8px; flex: none; }
+  .mark {
+    display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line);
+    background: transparent; color: var(--muted); font: inherit; font-size: 12px;
+    padding: 5px 12px; border-radius: 999px; cursor: pointer;
+    transition: color .12s, border-color .12s, background .12s;
+  }
+  .mark:hover { border-color: var(--accent); color: var(--accent); }
+  .mark.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .plate[data-mode="full"] .mark { background: rgba(0,0,0,.28); border-color: rgba(255,255,255,.4); color: #fff; }
+  .plate[data-mode="full"] .mark.on { background: var(--accent); border-color: var(--accent); }
+
+  /* ---- inventory strip (always visible, compact) ---- */
+  .inventory {
+    flex: none; border-bottom: 1px solid var(--line); background: var(--mat);
+    position: relative; z-index: 20; /* keep hover popovers above the split below */
+  }
+  .inv-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 7px max(24px, env(safe-area-inset-right, 0px)) 4px max(24px, env(safe-area-inset-left, 0px));
+  }
+  .inv-title {
+    font-family: "Bodoni Moda", Georgia, serif; font-style: italic; font-size: 16px; color: var(--ink);
+  }
+  /* segmented Wardrobe / Wishlist toggle + Aa font switcher */
+  .inv-seg { display: inline-flex; gap: 3px; padding: 2px; border: 1px solid var(--line); border-radius: 999px; }
+  .inv-seg button {
+    border: none; background: transparent; color: var(--muted);
+    font: inherit; font-size: 11px; padding: 3px 11px; border-radius: 999px; cursor: pointer;
+  }
+  .inv-seg button.active { background: var(--accent); color: #fff; }
+  .inv-sub { margin-left: auto; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .inv-tiles {
+    display: flex; flex-wrap: nowrap; align-items: stretch; gap: 0; min-height: 80px;
+    padding: 2px max(24px, env(safe-area-inset-right, 0px)) 14px max(24px, env(safe-area-inset-left, 0px));
+  }
+  /* tiles share the full width equally, with dashed rules between them */
+  .inv-tile {
+    position: relative; flex: 1 1 0; min-width: 0; display: flex; align-items: center;
+    justify-content: center; text-align: center; padding: 0 10px; white-space: nowrap; cursor: default;
+    border-left: 1px dashed color-mix(in srgb, var(--muted) 60%, transparent);
+  }
+  .inv-tile:first-child { border-left: none; }
+  .inv-count-label {
+    font-family: "Bodoni Moda", Georgia, serif; font-style: italic; font-size: 25px; color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  /* hover popover: the garments in this tile, ordered as a colour spectrum */
+  .inv-pop {
+    display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+    margin-top: 6px; z-index: 50; min-width: 150px; max-width: 240px; max-height: 50vh; overflow: auto;
+    background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
+    box-shadow: var(--shadow); padding: 7px;
+  }
+  .inv-tile:hover .inv-pop, .inv-tile:focus-within .inv-pop { display: block; }
+  .inv-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: 4px; }
+  .inv-popitem {
+    display: flex; align-items: center; gap: 9px; padding: 4px 6px; white-space: nowrap;
+    font-family: "Archivo", system-ui, sans-serif; font-size: 13px; color: var(--ink);
+  }
+  .inv-sw {
+    width: 15px; height: 15px; border-radius: 50%; flex: none;
+    box-shadow: inset 0 0 0 1px rgba(128,128,128,.4);
+  }
+  .inv-empty {
+    flex: 1; display: flex; align-items: center;
+    font-family: "Bodoni Moda", Georgia, serif; font-style: italic; color: var(--muted); font-size: 15px;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .stage img, .cats button, .stepper button, .theme, .plate { transition: none; }
+    .inv-caret { transition: none; }
   }
 
   /* ---- narrow ---- */
@@ -258,6 +343,18 @@
     </div>
   </header>
 
+  <section class="inventory" id="inventory" aria-label="Wardrobe inventory">
+    <div class="inv-head">
+      <span class="inv-title">Inventory</span>
+      <div class="inv-seg" id="invSeg" role="group" aria-label="Inventory view">
+        <button type="button" data-view="wardrobe" class="active">Wardrobe</button>
+        <button type="button" data-view="wishlist">Wishlist</button>
+      </div>
+      <span class="inv-sub" id="invSub"></span>
+    </div>
+    <div class="inv-tiles" id="invTiles"></div>
+  </section>
+
   <main class="split">
     <section class="panel" aria-label="Outfit controls">
       <div class="panel-scroll">
@@ -269,6 +366,9 @@
           <button data-cat="Locked">Locked</button>
           <button data-cat="Potential">Potential</button>
           <button data-cat="Doubtful">Doubtful</button>
+          <button data-cat="Wishlist" id="catWishlist">Wishlist</button>
+          <button data-cat="Owned" id="catOwned">Owned</button>
+          <button data-cat="Alternatives" id="catAlt">Alternatives</button>
         </nav>
         <div id="controls"></div>
       </div>
@@ -291,7 +391,12 @@
       <figcaption class="caption">
         <span class="plate-no" id="plateNo">—</span>
         <span class="cat-pill" id="catPill"></span>
+        <span class="cat-pill alt-tag" id="altTag">Alternative</span>
         <span class="descr" id="descr"></span>
+        <span class="marks">
+          <button class="mark" id="wishBtn" type="button" aria-pressed="false">♡ Wishlist</button>
+          <button class="mark" id="ownBtn" type="button" aria-pressed="false">✓ In wardrobe</button>
+        </span>
       </figcaption>
     </section>
   </main>
@@ -315,12 +420,111 @@
     { title: "Timepiece", keys: ["dial", "strap"] }
   ];
 
-  var state = { cat: "All", q: "", currentId: OUTFITS.length ? OUTFITS[0].combo_id : null };
+  var state = {
+    cat: "All", q: "", currentId: OUTFITS.length ? OUTFITS[0].combo_id : null,
+    lock: null,                          // null | { key, val }
+    wardrobeItems: {}, wishlistItems: {}, // item keys -> true (garments owned / wanted)
+    invView: "wardrobe"                  // which set the inventory shows
+  };
   var els = {};
 
-  function pool() {
+  // ---- item model: a garment is (slot, colour) [+ shoe_type]; outfits bulk-add garments ----
+  function itemKey(slotKey, o) {
+    var s = SLOTMAP[slotKey], k = slotKey + "|" + o[s.color];
+    if (slotKey === "shoe" && o.shoe_type) k += "|" + o.shoe_type;
+    return k;
+  }
+  function itemsOf(o) { return SLOTS.map(function (s) { return itemKey(s.key, o); }); }
+
+  // One display record per distinct garment (colour + hex), for the hover popovers.
+  var ITEM_INFO = {};
+  OUTFITS.forEach(function (o) {
+    SLOTS.forEach(function (s) {
+      var k = itemKey(s.key, o);
+      if (!ITEM_INFO[k]) {
+        ITEM_INFO[k] = {
+          slot: s.key, hex: o[s.hex],
+          label: o[s.color] + (s.key === "shoe" && o.shoe_type ? " " + o.shoe_type : "")
+        };
+      }
+    });
+  });
+  function hexToHsl(hex) {
+    hex = String(hex || "").replace("#", "");
+    if (hex.length === 3) hex = hex.replace(/./g, "$&$&");
+    if (hex.length < 6) return [0, 0, 0.5];
+    var r = parseInt(hex.substr(0, 2), 16) / 255,
+        g = parseInt(hex.substr(2, 2), 16) / 255,
+        b = parseInt(hex.substr(4, 2), 16) / 255;
+    var max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min, h = 0, l = (max + min) / 2;
+    var s = d === 0 ? 0 : (l > 0.5 ? d / (2 - max - min) : d / (max + min));
+    if (d !== 0) {
+      if (max === r) h = (g - b) / d + (g < b ? 6 : 0);
+      else if (max === g) h = (b - r) / d + 2;
+      else h = (r - g) / d + 4;
+      h *= 60;
+    }
+    return [h, s, l];
+  }
+  // Order a set of garments into a natural spectrum: neutrals (low saturation) first by
+  // lightness, then chromatic colours around the hue wheel, then by lightness.
+  function spectrumSort(items) {
+    return items.slice().sort(function (a, b) {
+      var A = hexToHsl(a.hex), B = hexToHsl(b.hex);
+      var aN = A[1] < 0.15, bN = B[1] < 0.15;
+      if (aN !== bN) return aN ? -1 : 1;
+      if (aN) return A[2] - B[2];
+      return A[0] - B[0] || A[2] - B[2];
+    });
+  }
+
+  // Each garment maps to a set of *holders* — the outfits (by combo_id) plus a "manual" sentinel
+  // that keep it in the set. A garment is present iff its holder set is non-empty; removing one
+  // holder drops the garment only when it was the last. (So removing one of two outfits that share
+  // a garment leaves the garment — and the other outfit — intact.) An empty holder object is
+  // truthy, so we always delete the key when its last holder goes.
+  function setOf(which) { return which === "wardrobe" ? state.wardrobeItems : state.wishlistItems; }
+  function addItemWardrobe(k, by) {                                   // own wins: drop all wish holders
+    delete state.wishlistItems[k];
+    (state.wardrobeItems[k] || (state.wardrobeItems[k] = {}))[by || "manual"] = true;
+  }
+  function addItemWishlist(k, by) {                                   // skip if already owned
+    if (state.wardrobeItems[k]) return;
+    (state.wishlistItems[k] || (state.wishlistItems[k] = {}))[by || "manual"] = true;
+  }
+  function removeItemHolder(k, which, by) {                           // drop one holder; delete if last
+    var set = setOf(which), holders = set[k];
+    if (!holders) return;
+    delete holders[by];
+    if (!Object.keys(holders).length) delete set[k];
+  }
+  function removeItemHard(k, which) { delete setOf(which)[k]; }       // drop the garment outright
+
+  function addOutfitWardrobe(o)   { itemsOf(o).forEach(function (k) { addItemWardrobe(k, o.combo_id); }); }
+  function addOutfitWishlist(o)   { itemsOf(o).forEach(function (k) { addItemWishlist(k, o.combo_id); }); }
+  function removeOutfitWardrobe(o){ itemsOf(o).forEach(function (k) { removeItemHolder(k, "wardrobe", o.combo_id); }); }
+  function removeOutfitWishlist(o){ itemsOf(o).forEach(function (k) { removeItemHolder(k, "wishlist", o.combo_id); }); }
+
+  // Pills are outfit-level: an outfit is Owned / Wished only if the user added *that outfit*, i.e.
+  // its combo_id is a holder on every one of its garments. Own-wins wipes a garment's wishlist
+  // holders when owned, so an explicitly wished outfit is inherently not owned.
+  function outfitOwned(o)  { var id = o.combo_id; return itemsOf(o).every(function (k) { var h = state.wardrobeItems[k]; return h && h[id]; }); }
+  function outfitWished(o) { var id = o.combo_id; return itemsOf(o).every(function (k) { var h = state.wishlistItems[k]; return h && h[id]; }); }
+  // Composable from owned garments (any holder); an Alternative is composable but not added as an
+  // outfit itself — e.g. garments from two added outfits happen to form a third outfit.
+  function outfitComposable(o) { return itemsOf(o).every(function (k) { return state.wardrobeItems[k]; }); }
+  function outfitAlternative(o) { return !outfitOwned(o) && outfitComposable(o); }
+
+  // A toggle changed: save, rebuild inventory, re-render controls.
+  function afterChange() { persist(); buildInventory(); render(false); }
+
+  // Category / search / wishlist / owned filter (everything except the lock).
+  function basePool() {
     return OUTFITS.filter(function (o) {
-      if (state.cat !== "All" && o.category !== state.cat) return false;
+      if (state.cat === "Wishlist") { if (!outfitWished(o)) return false; }
+      else if (state.cat === "Owned") { if (!outfitOwned(o)) return false; }
+      else if (state.cat === "Alternatives") { if (!outfitAlternative(o)) return false; }
+      else if (state.cat !== "All" && o.category !== state.cat) return false;
       if (state.q) {
         var hay = [o.combo_id, o.shirt_color, o.trouser_color, o.belt_color,
                    o.shoe_color, o.dial_color, o.strap_color].join(" ").toLowerCase();
@@ -329,10 +533,30 @@
       return true;
     });
   }
+  // basePool constrained by the lock (a hard filter on one slot).
+  function pool() {
+    var p = basePool();
+    if (state.lock) {
+      var col = SLOTMAP[state.lock.key].color;
+      p = p.filter(function (o) { return o[col] === state.lock.val; });
+    }
+    return p;
+  }
   function current(p) { p = p || pool(); return p.find(function (o) { return o.combo_id === state.currentId; }) || p[0]; }
   function score(o, cur) { return SLOTS.reduce(function (n, s) { return n + (o[s.color] === cur[s.color] ? 1 : 0); }, 0); }
 
   function onPick(key, val) {
+    // Re-aiming the locked slot: move the lock to the new value, then pick within the new pool.
+    if (state.lock && state.lock.key === key) {
+      state.lock.val = val;
+      var lp = pool(), lcur = current();
+      var lc = lp.slice().sort(function (a, b) {
+        return score(b, lcur) - score(a, lcur) || (a.combo_id < b.combo_id ? -1 : 1);
+      });
+      if (lc.length) state.currentId = lc[0].combo_id;
+      render(true);
+      return;
+    }
     var s = SLOTMAP[key], p = pool(), cur = current(p);
     var cands = p.filter(function (o) { return o[s.color] === val; });
     if (!cands.length) return;
@@ -341,6 +565,15 @@
     });
     state.currentId = cands[0].combo_id;
     render(true);
+  }
+  function toggleLock(key) {
+    if (state.lock && state.lock.key === key) { state.lock = null; }
+    else {
+      var cur = current();
+      if (!cur) return;
+      state.lock = { key: key, val: cur[SLOTMAP[key].color] };
+    }
+    render(false);
   }
   function step(d) {
     var p = pool(); if (!p.length) return;
@@ -358,11 +591,35 @@
         var s = SLOTMAP[key];
         var row = document.createElement("div"); row.className = "row";
         row.innerHTML = '<span class="dot"></span><label>' + s.label +
-          '</label><span class="sel"><select aria-label="' + s.label + ' colour"></select></span><span class="hex"></span>';
+          '</label><span class="sel"><select aria-label="' + s.label + ' colour"></select></span>' +
+          '<span class="hex"></span>' +
+          '<span class="rowacts">' +
+            '<button class="wishbtn" type="button" aria-label="Wishlist this ' + s.label +
+              '" title="Add this garment to the wishlist">♡</button>' +
+            '<button class="ownbtn" type="button" aria-label="Add this ' + s.label +
+              ' to the wardrobe" title="Add this garment to the wardrobe">✓</button>' +
+            '<button class="lockbtn" type="button" aria-label="Lock ' + s.label +
+              '" title="Lock this field to constrain the others">🔓</button>' +
+          '</span>';
         host.appendChild(row);
         var sel = row.querySelector("select");
         sel.addEventListener("change", function (e) { onPick(key, e.target.value); });
-        els[key] = { dot: row.querySelector(".dot"), sel: sel, hex: row.querySelector(".hex") };
+        var lockEl = row.querySelector(".lockbtn");
+        lockEl.addEventListener("click", function () { toggleLock(key); });
+        var wishEl = row.querySelector(".wishbtn"), ownEl = row.querySelector(".ownbtn");
+        // ♡ / ✓ act on the garment currently shown in this row.
+        wishEl.addEventListener("click", function () {
+          var k = itemKey(key, current());
+          if (state.wishlistItems[k]) removeItemHard(k, "wishlist"); else addItemWishlist(k);
+          afterChange();
+        });
+        ownEl.addEventListener("click", function () {
+          var k = itemKey(key, current());
+          if (state.wardrobeItems[k]) removeItemHard(k, "wardrobe"); else addItemWardrobe(k);
+          afterChange();
+        });
+        els[key] = { row: row, dot: row.querySelector(".dot"), sel: sel,
+                     hex: row.querySelector(".hex"), lock: lockEl, wish: wishEl, own: ownEl };
       });
     });
   }
@@ -375,25 +632,47 @@
       document.getElementById("folio").textContent = "—";
       document.getElementById("idx").textContent = "0";
       document.getElementById("total").textContent = "0";
+      updateChips();
       return;
     }
     plate.classList.remove("is-empty");
     var cur = current(p); state.currentId = cur.combo_id;
+    var bp = basePool();
 
     SLOTS.forEach(function (s) {
       var el = els[s.key];
+      var locked = state.lock && state.lock.key === s.key;
+      // The locked slot draws options from the unlocked set so its value stays changeable;
+      // every other slot's options come from the locked subset.
+      var opts = locked ? bp : p;
       var seen = {}, vals = [];
-      p.forEach(function (o) { if (!(o[s.color] in seen)) { seen[o[s.color]] = 1; vals.push([o[s.color], o[s.hex]]); } });
+      opts.forEach(function (o) { if (!(o[s.color] in seen)) { seen[o[s.color]] = 1; vals.push([o[s.color], o[s.hex]]); } });
       vals.sort(function (a, b) { return a[0].localeCompare(b[0]); });
       el.sel.innerHTML = vals.map(function (v) {
         return '<option value="' + v[0] + '">' + v[0] + "</option>";
       }).join("");
-      el.sel.value = cur[s.color];
+      el.sel.value = locked ? state.lock.val : cur[s.color];
       el.dot.style.background = cur[s.hex];
       var hx = cur[s.hex] || "";
       if (s.key === "shoe" && cur.shoe_type) hx = cur.shoe_type + " · " + hx;
       el.hex.textContent = hx;
+      el.lock.textContent = locked ? "🔒" : "🔓";
+      el.lock.classList.toggle("on", !!locked);
+      el.row.classList.toggle("is-locked", !!locked);
+      // ♡ / ✓ reflect whether the shown garment is wished / owned
+      var k = itemKey(s.key, cur);
+      el.wish.classList.toggle("on", !!state.wishlistItems[k]);
+      el.own.classList.toggle("on", !!state.wardrobeItems[k]);
     });
+
+    // wishlist / owned toggles for the whole current outfit (derived from its garments)
+    var wb = document.getElementById("wishBtn"), ob = document.getElementById("ownBtn");
+    var isWish = outfitWished(cur), isOwn = outfitOwned(cur);
+    wb.classList.toggle("on", isWish); wb.setAttribute("aria-pressed", isWish);
+    ob.classList.toggle("on", isOwn); ob.setAttribute("aria-pressed", isOwn);
+    // "Alternative": you own every garment but didn't add this outfit — click ✓ to claim it.
+    document.getElementById("altTag").classList.toggle("on", !isOwn && outfitComposable(cur));
+    updateChips();
 
     if (cur.amb_hex) plate.style.setProperty("--amb", cur.amb_hex);
 
@@ -416,6 +695,64 @@
     document.getElementById("total").textContent = p.length;
     document.getElementById("folio").textContent =
       String(i + 1).padStart(2, "0") + " / " + String(p.length).padStart(2, "0");
+  }
+
+  function esc(s) {
+    return String(s).replace(/[&<>]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; });
+  }
+  function updateChips() {
+    var w = 0, ow = 0, alt = 0;
+    OUTFITS.forEach(function (o) {
+      if (outfitWished(o)) w++;
+      if (outfitOwned(o)) ow++;
+      else if (outfitComposable(o)) alt++;
+    });
+    document.getElementById("catWishlist").textContent = "Wishlist (" + w + ")";
+    document.getElementById("catOwned").textContent = "Owned (" + ow + ")";
+    document.getElementById("catAlt").textContent = "Alternatives (" + alt + ")";
+  }
+  // Serialise a holder map { key: {holder:true,...} } to { key: [holder,...] } for the API.
+  function toKeyed(map) {
+    var out = {};
+    Object.keys(map).forEach(function (k) { out[k] = Object.keys(map[k]); });
+    return out;
+  }
+  function persist() {
+    try {
+      fetch("/api/state", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          wardrobe: toKeyed(state.wardrobeItems),
+          wishlist: toKeyed(state.wishlistItems)
+        })
+      });
+    } catch (e) {}
+  }
+  // Count-only inventory tiles ("Shirts · 6"), one per garment type, for the active set.
+  function buildInventory() {
+    var tiles = document.getElementById("invTiles"), sub = document.getElementById("invSub");
+    var set = state.invView === "wishlist" ? state.wishlistItems : state.wardrobeItems;
+    var total = 0, html = "";
+    SLOTS.forEach(function (s) {
+      var keys = Object.keys(set).filter(function (k) { return k.split("|")[0] === s.key; });
+      var n = keys.length; if (!n) return; total += n;
+      var infos = spectrumSort(keys.map(function (k) { return ITEM_INFO[k]; }).filter(Boolean));
+      var rows = infos.map(function (it) {
+        return '<span class="inv-popitem"><span class="inv-sw" style="background:' +
+          (it.hex || "#888") + '"></span>' + esc(it.label) + "</span>";
+      }).join("");
+      html += '<div class="inv-tile" tabindex="0"><span class="inv-count-label">' +
+        s.label + "s · " + n + '</span><div class="inv-pop">' + rows + "</div></div>";
+    });
+    if (!total) {
+      tiles.innerHTML = '<span class="inv-empty">' +
+        (state.invView === "wishlist" ? "Nothing wishlisted yet." : "Nothing in your wardrobe yet.") +
+        "</span>";
+      sub.textContent = "";
+      return;
+    }
+    tiles.innerHTML = html;
+    sub.textContent = total + " garment" + (total === 1 ? "" : "s");
   }
 
   // category
@@ -466,8 +803,48 @@
   var savedFit = null; try { savedFit = localStorage.getItem("wl-fit"); } catch (e) {}
   setMode(savedFit === "full" ? "full" : "fit");
 
+  // whole-outfit wishlist / wardrobe toggles (bulk-add this outfit's garments)
+  document.getElementById("wishBtn").addEventListener("click", function () {
+    var o = current(); if (!o) return;
+    if (outfitWished(o)) removeOutfitWishlist(o); else addOutfitWishlist(o);
+    afterChange();
+  });
+  document.getElementById("ownBtn").addEventListener("click", function () {
+    var o = current(); if (!o) return;
+    if (outfitOwned(o)) removeOutfitWardrobe(o); else addOutfitWardrobe(o);
+    afterChange();
+  });
+
+  // inventory: Wardrobe / Wishlist view toggle
+  document.getElementById("invSeg").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    this.querySelectorAll("button").forEach(function (x) { x.classList.remove("active"); });
+    b.classList.add("active"); state.invView = b.dataset.view; buildInventory();
+  });
   buildControls();
-  render(false);
+  // Replay a persisted set through `add` (which enforces the own-wins / skip-owned rules).
+  // `src` is either { key: [holders] } (current) or [key,...] (legacy, one "manual" holder).
+  function hydrate(src, add) {
+    if (!src) return;
+    if (Array.isArray(src)) { src.forEach(function (k) { add(k, "manual"); }); return; }
+    Object.keys(src).forEach(function (k) {
+      var holders = src[k];
+      if (Array.isArray(holders) && holders.length) holders.forEach(function (by) { add(k, by); });
+      else add(k, "manual");
+    });
+  }
+  // Load the persisted wardrobe / wishlist garments, then first inventory + render.
+  function boot() { buildInventory(); render(false); }
+  fetch("/api/state")
+    .then(function (r) { return r.json(); })
+    .then(function (st) {
+      // Accept the current shape { key: [holders] } and the legacy flat array [key,...]
+      // (one "manual" holder). Wardrobe wins, so seed it first and skip owned garments in wishlist.
+      hydrate(st && st.wardrobe, function (k, by) { addItemWardrobe(k, by); });
+      hydrate(st && st.wishlist, function (k, by) { addItemWishlist(k, by); });
+    })
+    .catch(function () {})
+    .then(boot);
 })();
 </script>
 </body>
